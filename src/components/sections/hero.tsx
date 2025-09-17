@@ -10,6 +10,7 @@ import {
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
+  type CarouselApi,
 } from "@/components/ui/carousel";
 import { Button } from "@/components/ui/button";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
@@ -18,14 +19,23 @@ import heroContent from "@/app/content/hero.json";
 const heroImages = PlaceHolderImages.filter(img => img.id.startsWith('hero-'));
 
 export default function HeroSection() {
+  const [api, setApi] = React.useState<CarouselApi>()
   const plugin = useRef(
-    Autoplay({ delay: 6000, stopOnInteraction: true })
+      Autoplay({ delay: 6000, stopOnInteraction: true })
   );
+
+  useEffect(() => {
+    if (!api) {
+      return
+    }
+  }, [api])
+
 
   return (
     <section className="relative w-full h-screen flex items-center justify-center text-center overflow-hidden">
       <div className="absolute inset-0 w-full h-full z-0">
         <Carousel
+          setApi={setApi}
           plugins={[plugin.current]}
           className="w-full h-full"
           onMouseEnter={plugin.current.stop}
