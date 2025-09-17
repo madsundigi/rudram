@@ -24,7 +24,7 @@ export type FormData = {
     consent: boolean;
 };
 
-export type ContactChannel = "whatsapp" | "call" | "email";
+export type ContactChannel = "whatsapp" | "call" | "email" | "calendly";
 
 export function HealthCheckModal({ children, defaultServiceId }: { children: React.ReactNode, defaultServiceId?: string }) {
     const [open, setOpen] = useState(false);
