@@ -1,3 +1,4 @@
+
 "use client";
 
 import React, { useEffect, useRef } from "react";
@@ -87,7 +88,7 @@ export default function HeroSection() {
             className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-text-reveal"
             style={{ animationDelay: '0.8s', animationFillMode: 'backwards' }}
           >
-            <HealthCheckModal>
+            <HealthCheckModal defaultServiceId="health-check">
               <Button size="lg" className="btn-glow text-lg px-8 py-6 bg-gradient-to-r from-teal-400 to-cyan-500 hover:from-teal-500 hover:to-cyan-600 border border-teal-300/50 text-white">
                 {heroContent.cta.primary.text}
               </Button>
