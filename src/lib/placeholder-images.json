@@ -1,3 +1,10 @@
 {
-  "placeholderImages": []
+  "placeholderImages": [
+    {
+      "id": "rudram-founders",
+      "description": "A holographic portrait of the founders, Shivam & Parav.",
+      "imageUrl": "https://picsum.photos/seed/founders/400/400",
+      "imageHint": "founders portrait"
+    }
+  ]
 }
