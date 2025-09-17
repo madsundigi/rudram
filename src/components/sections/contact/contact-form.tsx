@@ -5,6 +5,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Calendar, Mail, Phone, Linkedin, Twitter, Github } from "lucide-react";
 import contactContent from "@/app/content/contact.json";
 import settings from "@/app/content/settings.json";
+import { HealthCheckModal } from "@/components/modals/health-check-modal";
 
 export default function ContactForm() {
   return (
@@ -30,11 +31,11 @@ export default function ContactForm() {
                     <Calendar className="h-12 w-12 text-primary mb-4 text-glow"/>
                     <h3 className="text-xl font-bold mb-2">{contactContent.calendly.headline}</h3>
                     <p className="text-muted-foreground mb-4 text-sm">{contactContent.calendly.subheadline}</p>
-                    <Link href="#">
+                    <HealthCheckModal>
                       <Button className="btn-glow">
                         {contactContent.calendly.ctaText}
                       </Button>
-                    </Link>
+                    </HealthCheckModal>
                 </div>
                 <div className="w-full rounded-xl glass-morphic border border-primary/20 p-6 space-y-4 card-glow">
                     <h3 className="text-xl font-bold text-center text-primary">Direct Contact</h3>

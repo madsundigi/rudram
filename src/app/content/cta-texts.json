@@ -1,0 +1,14 @@
+{
+  "book_health_check": {
+    "title": "Book a Data Health Check",
+    "description": "Start your journey to data clarity. Tell us about your project, and we'll connect with you to schedule your comprehensive 2-week audit."
+  },
+  "start_journey": {
+    "title": "Start Your Journey",
+    "description": "Let's explore how data can transform your business. Share a few details, and we'll provide a personalized roadmap preview."
+  },
+  "free_intro": {
+    "title": "Get Your Free Intro Call",
+    "description": "Schedule a quick 15-minute chat to see how Rudram can help you achieve your data goals."
+  }
+}

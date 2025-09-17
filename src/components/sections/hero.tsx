@@ -15,6 +15,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
 import heroContent from "@/app/content/hero.json";
+import { HealthCheckModal } from "@/components/modals/health-check-modal";
 
 const heroImages = PlaceHolderImages.filter(img => img.id.startsWith('hero-'));
 
@@ -85,11 +86,11 @@ export default function HeroSection() {
             className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-text-reveal"
             style={{ animationDelay: '0.8s', animationFillMode: 'backwards' }}
           >
-            <Link href={heroContent.cta.primary.href}>
+            <HealthCheckModal>
               <Button size="lg" className="btn-glow text-lg px-8 py-6 bg-gradient-to-r from-teal-400 to-cyan-500 hover:from-teal-500 hover:to-cyan-600 border border-teal-300/50 text-white">
                 {heroContent.cta.primary.text}
               </Button>
-            </Link>
+            </HealthCheckModal>
             <Link href={heroContent.cta.secondary.href}>
               <Button size="lg" variant="outline" className="text-lg px-8 py-6 glass-morphic border-white/50 hover:border-white text-white hover:bg-white/10">
                 {heroContent.cta.secondary.text}

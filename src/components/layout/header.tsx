@@ -4,6 +4,7 @@ import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Menu, Mountain } from "lucide-react";
 import settings from "@/app/content/settings.json";
 import navLinks from "@/app/content/nav-links.json";
+import { HealthCheckModal } from "@/components/modals/health-check-modal";
 
 
 export default function Header() {
@@ -27,12 +28,14 @@ export default function Header() {
           ))}
         </nav>
         <div className="flex items-center gap-4">
-          <Button
-            variant="default"
-            className="hidden md:inline-flex btn-glow bg-primary/80 hover:bg-primary"
-          >
-            {settings.cta.primary.text}
-          </Button>
+          <HealthCheckModal>
+            <Button
+              variant="default"
+              className="hidden md:inline-flex btn-glow bg-primary/80 hover:bg-primary"
+            >
+              {settings.cta.primary.text}
+            </Button>
+          </HealthCheckModal>
           <Sheet>
             <SheetTrigger asChild>
               <Button variant="outline" size="icon" className="md:hidden">
@@ -60,9 +63,11 @@ export default function Header() {
                     {link.label}
                   </Link>
                 ))}
-                <Button variant="default" className="w-full btn-glow">
-                  {settings.cta.primary.text}
-                </Button>
+                <HealthCheckModal>
+                  <Button variant="default" className="w-full btn-glow">
+                    {settings.cta.primary.text}
+                  </Button>
+                </HealthCheckModal>
               </nav>
             </SheetContent>
           </Sheet>

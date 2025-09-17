@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { Button } from "@/components/ui/button";
 import servicesContent from "@/app/content/services.json";
+import { HealthCheckModal } from '@/components/modals/health-check-modal';
 
 export default function CtaBanner() {
     const { headline, primaryCta, secondaryCta } = servicesContent.ctaBanner;
@@ -15,11 +16,11 @@ export default function CtaBanner() {
                         {headline}
                     </h2>
                     <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                        <Link href={primaryCta.href}>
+                        <HealthCheckModal>
                             <Button size="lg" className="btn-glow text-lg px-8 py-6 bg-gradient-to-r from-teal-400 to-cyan-500 hover:from-teal-500 hover:to-cyan-600 border border-teal-300/50 text-white animate-pulse-glow">
                                 {primaryCta.text}
                             </Button>
-                        </Link>
+                        </HealthCheckModal>
                         <Link href={secondaryCta.href}>
                             <Button size="lg" variant="outline" className="text-lg px-8 py-6 glass-morphic border-white/50 hover:border-white text-white hover:bg-white/10">
                                 {secondaryCta.text}
