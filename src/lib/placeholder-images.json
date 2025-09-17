@@ -5,6 +5,30 @@
       "description": "A holographic portrait of the founders, Shivam & Parav.",
       "imageUrl": "https://picsum.photos/seed/founders/400/400",
       "imageHint": "founders portrait"
+    },
+    {
+      "id": "hero-1",
+      "description": "A data professional working in a modern server room, representing data clarity and control.",
+      "imageUrl": "https://picsum.photos/seed/hero1/1920/1080",
+      "imageHint": "data server"
+    },
+    {
+      "id": "hero-2",
+      "description": "Abstract visualization of data flowing, representing the transformation from chaos to clarity.",
+      "imageUrl": "https://picsum.photos/seed/hero2/1920/1080",
+      "imageHint": "data abstract"
+    },
+    {
+      "id": "hero-3",
+      "description": "A team collaborating around a dashboard, showcasing business intelligence and teamwork.",
+      "imageUrl": "https://picsum.photos/seed/hero3/1920/1080",
+      "imageHint": "business team"
+    },
+    {
+      "id": "hero-4",
+      "description": "A single glowing node in a network, symbolizing a clear insight found within complex data.",
+      "imageUrl": "https://picsum.photos/seed/hero4/1920/1080",
+      "imageHint": "data insight"
     }
   ]
 }

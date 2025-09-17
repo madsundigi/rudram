@@ -99,6 +99,10 @@ export default {
           'from': { opacity: '0', transform: 'translateY(10px)' },
           'to': { opacity: '1', transform: 'translateY(0)' },
         },
+        'pan': {
+          '0%': { backgroundPosition: '0% 0%' },
+          '100%': { backgroundPosition: '100% 100%' },
+        },
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
@@ -107,6 +111,7 @@ export default {
         'pulse-glow': 'pulse-glow 4s ease-in-out infinite',
         'gradient-shift': 'gradient-shift 5s ease infinite',
         'text-reveal': 'text-reveal 1s cubic-bezier(0.76, 0, 0.24, 1) forwards',
+        'pan': 'pan 20s linear infinite',
       },
     },
   },
