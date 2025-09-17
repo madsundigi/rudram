@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import Autoplay from "embla-carousel-autoplay";
@@ -18,7 +18,7 @@ import heroContent from "@/app/content/hero.json";
 const heroImages = PlaceHolderImages.filter(img => img.id.startsWith('hero-'));
 
 export default function HeroSection() {
-  const plugin = React.useRef(
+  const plugin = useRef(
     Autoplay({ delay: 6000, stopOnInteraction: true })
   );
 
