@@ -1,5 +1,6 @@
 [
-  { "href": "#path", "label": "The Path" },
+  { "href": "/", "label": "Home" },
+  { "href": "/services", "label": "Services" },
   { "href": "#why-us", "label": "Why Us" },
   { "href": "#cases", "label": "Case Stories" },
   { "href": "#team", "label": "About Us"},
