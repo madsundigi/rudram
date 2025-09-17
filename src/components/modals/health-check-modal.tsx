@@ -74,6 +74,7 @@ export function HealthCheckModal({ children, defaultServiceId }: { children: Rea
 
                 {step === 2 && (
                     <ChannelSelect
+                        formData={formData}
                         onChannelSelect={(selectedChannel) => {
                             setChannel(selectedChannel);
                             setStep(3);

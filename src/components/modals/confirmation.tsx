@@ -69,14 +69,15 @@ export function Confirmation({ formData, channel, onBack, onClose }: Confirmatio
 
     return (
         <form action={formAction} className="space-y-6">
-            {Object.entries(formData).map(([key, value]) => {
-                if (key !== 'consent') {
-                    return <input type="hidden" key={key} name={key} value={String(value)} />
-                }
-                return null;
-            })}
-             <input type="hidden" name="consent" value={formData.consent ? 'on' : 'off'} />
-             <input type="hidden" name="contactChannel" value={channel} />
+            <input type="hidden" name="name" value={formData.name} />
+            <input type="hidden" name="email" value={formData.email} />
+            <input type="hidden" name="company" value={formData.company} />
+            <input type="hidden" name="phone" value={formData.phone} />
+            <input type="hidden" name="businessSize" value={formData.businessSize} />
+            <input type="hidden" name="message" value={formData.message} />
+            <input type="hidden" name="serviceId" value={formData.serviceId} />
+            <input type="hidden" name="consent" value={formData.consent ? 'on' : 'off'} />
+            <input type="hidden" name="contactChannel" value={channel} />
 
             <div className="space-y-2 text-sm p-4 rounded-md glass-morphic border border-primary/20">
                 <p><strong>Service:</strong> {services.services.find(s => s.id === formData.serviceId)?.title}</p>
@@ -92,7 +93,7 @@ export function Confirmation({ formData, channel, onBack, onClose }: Confirmatio
                     <AlertTitle>Submission Error</AlertTitle>
                     <AlertDescription>
                         {state.message}
-                        {state.errors && <ul>{Object.values(state.errors).flat().map((err, i) => <li key={i}>- {err}</li>)}</ul>}
+                        {state.errors && <ul>{Object.values(state.errors).flat().map((err, i) => <li key-i={i}>- {err}</li>)}</ul>}
                     </AlertDescription>
                 </Alert>
             )}

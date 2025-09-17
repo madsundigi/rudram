@@ -3,25 +3,58 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { MessageCircle, Phone, Mail, Calendar } from "lucide-react";
-import type { ContactChannel } from "./health-check-modal";
+import type { ContactChannel, FormData } from "./health-check-modal";
 import teamContacts from '@/app/content/team-contacts.json';
 import Link from "next/link";
 
 const channels = [
-    { id: "whatsapp", icon: MessageCircle, title: "WhatsApp Chat", description: "Immediate response" },
-    { id: "call", icon: Phone, title: "Request a Call", description: "Within 2 business hours" },
     { id: "email", icon: Mail, title: "Request by Email", description: "Within 24 hours" },
 ] as const;
 
 interface ChannelSelectProps {
+    formData: Partial<FormData>;
     onChannelSelect: (channel: ContactChannel) => void;
     onBack: () => void;
 }
 
-export function ChannelSelect({ onChannelSelect, onBack }: ChannelSelectProps) {
+export function ChannelSelect({ formData, onChannelSelect, onBack }: ChannelSelectProps) {
+
+    const whatsAppMessage = encodeURIComponent(
+        `Hi Rudram — I’d like to book a Data Health Check for the '${formData.serviceId}' service.
+        \nName: ${formData.name}
+        \nCompany: ${formData.company}
+        \nEmail: ${formData.email}`
+    );
+    const whatsappUrl = `https://wa.me/${teamContacts.whatsapp}?text=${whatsAppMessage}`;
+    const telUrl = `tel:${teamContacts.phone.replace(/\s/g, '')}`;
+
     return (
         <div className="space-y-6">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">
+                    <Card className="glass-morphic card-glow border-primary/20 text-center cursor-pointer hover:border-primary h-full">
+                        <CardHeader className="items-center pb-2">
+                            <MessageCircle className="w-10 h-10 mb-2 text-primary" />
+                            <CardTitle className="text-base font-bold">WhatsApp Chat</CardTitle>
+                        </CardHeader>
+                        <CardContent>
+                            <CardDescription>Immediate response</CardDescription>
+                        </CardContent>
+                    </Card>
+                </a>
+
+                <a href={telUrl}>
+                    <Card className="glass-morphic card-glow border-primary/20 text-center cursor-pointer hover:border-primary h-full">
+                        <CardHeader className="items-center pb-2">
+                            <Phone className="w-10 h-10 mb-2 text-primary" />
+                            <CardTitle className="text-base font-bold">Make a Call</CardTitle>
+                        </CardHeader>
+                        <CardContent>
+                            <CardDescription>Direct line to our team</CardDescription>
+                        </CardContent>
+                    </Card>
+                </a>
+                
                 {channels.map(channel => (
                     <Card 
                         key={channel.id}
