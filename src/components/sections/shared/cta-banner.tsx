@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { Button } from "@/components/ui/button";
 import servicesContent from "@/app/content/services.json";
 import { HealthCheckModal } from '@/components/modals/health-check-modal';
+import { StartJourneyModal } from '@/components/modals/start-journey-modal';
 
 export default function CtaBanner() {
     const { headline, primaryCta, secondaryCta } = servicesContent.ctaBanner;
@@ -21,11 +22,11 @@ export default function CtaBanner() {
                                 {primaryCta.text}
                             </Button>
                         </HealthCheckModal>
-                        <Link href={secondaryCta.href}>
+                        <StartJourneyModal>
                             <Button size="lg" variant="outline" className="text-lg px-8 py-6 glass-morphic border-white/50 hover:border-white text-white hover:bg-white/10">
                                 {secondaryCta.text}
                             </Button>
-                        </Link>
+                        </StartJourneyModal>
                     </div>
                 </div>
             </div>

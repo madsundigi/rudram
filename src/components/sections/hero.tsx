@@ -16,6 +16,7 @@ import { Button } from "@/components/ui/button";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
 import heroContent from "@/app/content/hero.json";
 import { HealthCheckModal } from "@/components/modals/health-check-modal";
+import { StartJourneyModal } from "@/components/modals/start-journey-modal";
 
 const heroImages = PlaceHolderImages.filter(img => img.id.startsWith('hero-'));
 
@@ -91,11 +92,11 @@ export default function HeroSection() {
                 {heroContent.cta.primary.text}
               </Button>
             </HealthCheckModal>
-            <Link href={heroContent.cta.secondary.href}>
+            <StartJourneyModal>
               <Button size="lg" variant="outline" className="text-lg px-8 py-6 glass-morphic border-white/50 hover:border-white text-white hover:bg-white/10">
                 {heroContent.cta.secondary.text}
               </Button>
-            </Link>
+            </StartJourneyModal>
           </div>
         </div>
       </div>
