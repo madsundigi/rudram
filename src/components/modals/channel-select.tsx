@@ -9,7 +9,6 @@ const channels = [
     { id: "whatsapp", icon: MessageCircle, title: "WhatsApp Chat", description: "Immediate response" },
     { id: "call", icon: Phone, title: "Request a Call", description: "Within 2 business hours" },
     { id: "email", icon: Mail, title: "Request by Email", description: "Within 24 hours" },
-    { id: "calendly", icon: Calendar, title: "Book via Calendar", description: "Choose your own slot" },
 ] as const;
 
 interface ChannelSelectProps {
@@ -20,7 +19,7 @@ interface ChannelSelectProps {
 export function ChannelSelect({ onChannelSelect, onBack }: ChannelSelectProps) {
     return (
         <div className="space-y-6">
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                 {channels.map(channel => (
                     <Card 
                         key={channel.id}
