@@ -39,30 +39,29 @@ export default function Services() {
                 </div>
 
                 <div className="space-y-24">
-                    {servicesContent.services.map((service) => (
+                    {servicesContent.services.map((service, serviceIdx) => (
                         <div key={service.id} className="grid lg:grid-cols-2 gap-12 items-center group">
-                            <div className="lg:order-2 relative w-full h-80 lg:h-full flex items-center justify-center [perspective:1000px]">
+                            <div className={`relative w-full h-80 lg:h-full flex items-center justify-center [perspective:1000px] ${serviceIdx % 2 === 0 ? 'lg:order-2' : ''}`}>
                                 <div className="relative w-64 h-64 [transform-style:preserve-3d] transition-transform duration-500 group-hover:[transform:rotateY(-15deg)_scale(1.05)]">
                                      <div className="absolute inset-0 rounded-2xl glass-morphic border-2 border-primary/30 p-4 shadow-2xl shadow-primary/20 animate-float flex items-center justify-center">
                                         {serviceIcons[service.icon]}
                                      </div>
                                 </div>
                             </div>
-                            <div className="space-y-6">
+                            <div className="space-y-6 text-center lg:text-left flex flex-col items-center lg:items-start">
                                 <h2 className="text-3xl md:text-4xl font-bold text-primary text-glow">{service.title}</h2>
-                                <p className="text-lg text-muted-foreground">{service.description}</p>
-                                <ul className="space-y-4">
+                                <p className="text-lg text-muted-foreground max-w-lg">{service.description}</p>
+                                <ul className="space-y-4 max-w-lg">
                                     {service.keyPoints.map((point, index) => (
-                                        <li key={index} className="flex items-start gap-4">
+                                        <li key={index} className="flex items-start gap-4 text-left">
                                             <div className="w-8 h-8 rounded-full glass-morphic flex items-center justify-center flex-shrink-0 border border-accent/30 mt-1">
                                                 {keyPointIcons[point.icon] || <CheckCircle className="h-5 w-5 text-accent" />}
                                             </div>
-
                                             <span className="text-muted-foreground">{point.text}</span>
                                         </li>
                                     ))}
                                 </ul>
-                                <p className="italic text-primary/80 text-lg font-semibold border-l-4 border-primary/50 pl-4 py-2">
+                                <p className="italic text-primary/80 text-lg font-semibold border-l-4 border-primary/50 pl-4 py-2 text-left self-stretch lg:self-start max-w-lg">
                                   {service.valueProposition}
                                 </p>
                                 <Button size="lg" className="btn-glow px-8 py-6 text-lg">
@@ -76,3 +75,5 @@ export default function Services() {
         </section>
     );
 }
+
+    
