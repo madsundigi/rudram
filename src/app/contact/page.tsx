@@ -1,12 +1,10 @@
-import HeroSection from "@/components/sections/hero";
-import ClarityPath from "@/components/sections/clarity-path";
-import WhyUs from "@/components/sections/why-us";
-import Faq from "@/components/sections/faq";
+import ContactHero from "@/components/sections/contact/contact-hero";
+import ContactForm from "@/components/sections/contact/contact-form";
+import CtaBanner from "@/components/sections/shared/cta-banner";
 
-export default function Home() {
+export default function ContactPage() {
   return (
     <div className="flex flex-col min-h-screen overflow-x-hidden">
-      <HeroSection />
       <div className="relative z-10 bg-background">
         <div className="absolute top-0 left-0 w-full h-full -z-10 opacity-30">
           <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-background via-primary/10 to-accent/10"></div>
@@ -15,9 +13,9 @@ export default function Home() {
             style={{ maskImage: 'radial-gradient(ellipse at center, white 20%, transparent 70%)' }}
           ></div>
         </div>
-        <ClarityPath />
-        <WhyUs />
-        <Faq />
+        <ContactHero />
+        <ContactForm />
+        <CtaBanner />
       </div>
     </div>
   );

@@ -4,5 +4,5 @@
   { "href": "/case-studies", "label": "Case Stories" },
   { "href": "/about", "label": "About Us"},
   { "href": "#faq", "label": "FAQs" },
-  { "href": "#contact", "label": "Contact" }
+  { "href": "/contact", "label": "Contact" }
 ]
