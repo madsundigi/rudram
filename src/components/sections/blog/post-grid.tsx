@@ -16,12 +16,13 @@ const PostCard = ({ post }: { post: Post }) => {
   const [formattedDate, setFormattedDate] = useState('');
 
   useEffect(() => {
+    // Ensure this runs only on the client
     setFormattedDate(new Date(post.date).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' }));
   }, [post.date]);
 
   return (
     <Link href={`/blog/${post.slug}`} passHref>
-      <Card className="glass-morphic card-glow border-primary/20 flex flex-col h-full overflow-hidden">
+      <Card className="glass-morphic card-glow border-primary/20 flex flex-col h-full overflow-hidden group">
         <div className="relative w-full h-56">
             <Image
                 src={post.image}
@@ -40,7 +41,7 @@ const PostCard = ({ post }: { post: Post }) => {
             <p className="text-muted-foreground text-sm line-clamp-3">{post.excerpt}</p>
           </div>
           <div className="mt-4 text-xs text-muted-foreground">
-            <span>{formattedDate}</span>
+            <time dateTime={post.date}>{formattedDate || ' '}</time>
           </div>
         </CardContent>
       </Card>

@@ -11,6 +11,8 @@ export default function Footer() {
   const [currentYear, setCurrentYear] = useState(new Date().getFullYear());
 
   useEffect(() => {
+    // This ensures the component has mounted on the client before setting the year
+    // and avoids a server-client mismatch.
     setCurrentYear(new Date().getFullYear());
   }, []);
 

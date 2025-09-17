@@ -21,7 +21,8 @@ function CountUp({ end, duration = 2 }: { end: number; duration?: number }) {
     const animate = (timestamp: number) => {
       if (!startTime) startTime = timestamp;
       const progress = Math.min((timestamp - startTime) / (duration * 1000), 1);
-      setCount(Math.floor(progress * end));
+      const newCount = Math.floor(progress * end);
+      setCount(newCount);
       if (progress < 1) {
         animationFrame = requestAnimationFrame(animate);
       }
