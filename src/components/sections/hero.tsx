@@ -1,6 +1,9 @@
+
 "use client";
 
-import { Button } from "@/components/ui/button";
+import React from "react";
+import Image from "next/image";
+import Autoplay from "embla-carousel-autoplay";
 import {
   Carousel,
   CarouselContent,
@@ -8,16 +11,14 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import Autoplay from "embla-carousel-autoplay";
-import Image from "next/image";
+import { Button } from "@/components/ui/button";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
-import React from "react";
 
 const heroImages = PlaceHolderImages.filter(img => img.id.startsWith('hero-'));
 
 export default function HeroSection() {
   const plugin = React.useRef(
-    Autoplay({ delay: 4000, stopOnInteraction: true })
+    Autoplay({ delay: 6000, stopOnInteraction: true })
   );
 
   return (
@@ -30,15 +31,15 @@ export default function HeroSection() {
           onMouseLeave={plugin.current.reset}
           opts={{ loop: true }}
         >
-          <CarouselContent className="h-full">
+          <CarouselContent className="h-full" effect="fade">
             {heroImages.map((image, index) => (
               <CarouselItem key={index} className="h-full">
-                <div className="w-full h-full relative">
+                <div className="w-full h-full relative overflow-hidden">
                   <Image
                     src={image.imageUrl}
                     alt={image.description}
                     fill
-                    className="object-cover"
+                    className="object-cover animate-zoom"
                     data-ai-hint={image.imageHint}
                     priority={index === 0}
                   />

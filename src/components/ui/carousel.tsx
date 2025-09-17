@@ -1,3 +1,4 @@
+
 "use client"
 
 import * as React from "react"
@@ -152,8 +153,8 @@ Carousel.displayName = "Carousel"
 
 const CarouselContent = React.forwardRef<
   HTMLDivElement,
-  React.HTMLAttributes<HTMLDivElement>
->(({ className, ...props }, ref) => {
+  React.HTMLAttributes<HTMLDivElement> & { effect?: "fade" }
+>(({ className, effect, ...props }, ref) => {
   const { carouselRef, orientation } = useCarousel()
 
   return (
@@ -162,7 +163,8 @@ const CarouselContent = React.forwardRef<
         ref={ref}
         className={cn(
           "flex h-full",
-          orientation === "horizontal" ? "-ml-4" : "-mt-4 flex-col",
+          orientation === "horizontal" ? (effect === 'fade' ? '' : "-ml-4") : (effect === 'fade' ? '' : "-mt-4 flex-col"),
+          effect === 'fade' && '[&>.carousel-item]:opacity-0 [&>.carousel-item.is-active]:opacity-100',
           className
         )}
         {...props}
@@ -184,8 +186,9 @@ const CarouselItem = React.forwardRef<
       role="group"
       aria-roledescription="slide"
       className={cn(
-        "min-w-0 shrink-0 grow-0 basis-full",
-        orientation === "horizontal" ? "pl-4" : "pt-4",
+        "min-w-0 shrink-0 grow-0 basis-full transition-opacity duration-[3s]",
+        "carousel-item",
+        orientation === "horizontal" ? "pl-0" : "pt-0",
         className
       )}
       {...props}

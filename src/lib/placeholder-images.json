@@ -1,3 +1,4 @@
+
 {
   "placeholderImages": [
     {
@@ -8,27 +9,33 @@
     },
     {
       "id": "hero-1",
-      "description": "A data professional working in a modern server room, representing data clarity and control.",
-      "imageUrl": "https://picsum.photos/seed/hero1/1920/1080",
-      "imageHint": "data server"
-    },
-    {
-      "id": "hero-2",
       "description": "Abstract visualization of data flowing, representing the transformation from chaos to clarity.",
       "imageUrl": "https://picsum.photos/seed/hero2/1920/1080",
       "imageHint": "data abstract"
     },
     {
-      "id": "hero-3",
-      "description": "A team collaborating around a dashboard, showcasing business intelligence and teamwork.",
+      "id": "hero-2",
+      "description": "A team collaborating around a holographic dashboard, showcasing business intelligence and teamwork.",
       "imageUrl": "https://picsum.photos/seed/hero3/1920/1080",
       "imageHint": "business team"
     },
     {
-      "id": "hero-4",
+      "id": "hero-3",
       "description": "A single glowing node in a network, symbolizing a clear insight found within complex data.",
       "imageUrl": "https://picsum.photos/seed/hero4/1920/1080",
       "imageHint": "data insight"
+    },
+    {
+      "id": "hero-4",
+      "description": "Futuristic data analytics interface on a holographic screen.",
+      "imageUrl": "https://picsum.photos/seed/hero5/1920/1080",
+      "imageHint": "data analytics"
+    },
+    {
+      "id": "hero-5",
+      "description": "Secure cloud data flow visualization with glowing particles.",
+      "imageUrl": "https://picsum.photos/seed/hero6/1920/1080",
+      "imageHint": "cloud data"
     }
   ]
 }

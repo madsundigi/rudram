@@ -1,3 +1,4 @@
+
 import type {Config} from 'tailwindcss';
 
 export default {
@@ -103,6 +104,10 @@ export default {
           '0%': { backgroundPosition: '0% 0%' },
           '100%': { backgroundPosition: '100% 100%' },
         },
+        'zoom': {
+          '0%': { transform: 'scale(1)' },
+          '100%': { transform: 'scale(1.1)' },
+        },
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
@@ -112,6 +117,7 @@ export default {
         'gradient-shift': 'gradient-shift 5s ease infinite',
         'text-reveal': 'text-reveal 1s cubic-bezier(0.76, 0, 0.24, 1) forwards',
         'pan': 'pan 20s linear infinite',
+        'zoom': 'zoom 8s ease-in-out infinite alternate',
       },
     },
   },
