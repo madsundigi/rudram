@@ -1,50 +1,123 @@
 {
-    "headline": "From Messy to Meaningful",
-    "subheadline": "See how we've transformed businesses like yours.",
-    "stories": [
-      {
-        "title": "Retail",
-        "challenge": "Chaotic spreadsheets",
-        "solution": "Live sales dashboards",
-        "visuals": {
-          "before": {"icon": "before-spreadsheet"},
-          "after": {"icon": "after-dashboard"}
-        },
-        "result": {
-          "metric": "80% Time Saved",
-          "description": "Automated reporting freed up the sales team to focus on customers, not data entry."
-        }
-      },
-      {
-        "title": "Manufacturing",
-        "challenge": "Costly material leaks",
-        "solution": "Real-time waste tracking",
-         "visuals": {
-          "before": {"icon": "before-waste"},
-          "after": {"icon": "after-tracking"}
-        },
-        "result": {
-          "metric": "15% Cost Reduction",
-          "description": "Pinpointed inefficiencies in the production line, leading to significant material savings."
-        }
-      },
-      {
-        "title": "Real Estate",
-        "challenge": "Disorganized contacts",
-        "solution": "Automated CRM",
-        "visuals": {
-          "before": {"icon": "before-contacts"},
-          "after": {"icon": "after-crm"}
-        },
-        "result": {
-          "metric": "40% Faster Follow-ups",
-          "description": "Streamlined client management, ensuring no lead was left behind and improving client relations."
-        }
-      }
-    ],
+  "pageTitle": "Real Growth, Real Results",
+  "pageDescription": "We help companies save time, cut costs, and unlock clarity through smarter data.",
+  "stats": [
+    { "label": "Faster Reporting", "value": 80, "unit": "%" },
+    { "label": "Avg. Cost Savings", "value": 15, "unit": "%" },
+    { "label": "Client Growth Confidence", "value": 95, "unit": "%" }
+  ],
+  "featuredStory": {
+    "industry": "Retail Pilot",
+    "challenge": "Weekly reports took 12+ hours, across multiple complex spreadsheets.",
+    "solution": "Built a single interactive dashboard that automated data aggregation and visualization.",
+    "result": "Reporting time cut by over 80%.",
+    "visual": {
+      "before": { "title": "Chaotic Spreadsheets", "icon": "Sheet" },
+      "after": { "title": "Clean Dashboard", "icon": "LayoutDashboard" }
+    },
+    "roiGraph": {
+      "title": "Hours Saved Per Week",
+      "data": [
+        { "name": "Before", "value": 12 },
+        { "name": "After", "value": 2 }
+      ]
+    },
     "cta": {
-      "text": "See What We Can Do For You",
+      "text": "See How We Can Do This for You",
       "href": "#contact"
     }
+  },
+  "stories": [
+    {
+      "title": "Manufacturing Pilot",
+      "description": "Found ₹6 lakh/year in hidden material leakage costs during our 2-week Health Check.",
+      "visual": {
+        "type": "graph",
+        "icon": "TrendingUp",
+        "data": {
+          "title": "Annual Savings",
+          "metric": "₹6L"
+        }
+      }
+    },
+    {
+      "title": "Real Estate CRM",
+      "description": "Cleaned & restructured 50k+ contacts for a fully automated marketing pipeline.",
+      "visual": {
+        "type": "flowchart",
+        "icon": "Users",
+        "data": {
+          "before": "Messy CRM",
+          "after": "Automated Pipeline"
+        }
+      }
+    },
+    {
+      "title": "SME Finance Team",
+      "description": "Replaced 20+ spreadsheets with one simple, powerful Data App.",
+      "visual": {
+        "type": "graph",
+        "icon": "PieChart",
+        "data": {
+          "title": "Manual Work",
+          "metric": "-90%"
+        }
+      }
+    }
+  ],
+  "roiSection": {
+    "headline": "The ROI of Clarity",
+    "charts": {
+      "timeSaved": {
+        "title": "Time Saved Across Clients",
+        "data": [
+          { "client": "Client A", "value": 60 },
+          { "client": "Client B", "value": 80 },
+          { "client": "Client C", "value": 75 }
+        ]
+      },
+      "costSavings": {
+        "title": "Hidden Cost Savings",
+        "data": [
+            { "month": "Jan", "savings": 0 },
+            { "month": "Feb", "savings": 5000 },
+            { "month": "Mar", "savings": 12000 },
+            { "month": "Apr", "savings": 25000 }
+        ]
+      },
+      "growthConfidence": {
+        "title": "Growth Confidence",
+        "before": 45,
+        "after": 95
+      }
+    }
+  },
+  "testimonials": [
+    {
+      "quote": "With Rudram, reporting time dropped from 12 hours to 2 — we now focus on decisions, not spreadsheets.",
+      "company": "Retail Client",
+      "logo": "https://picsum.photos/seed/retail/100/40"
+    },
+    {
+      "quote": "The Data Health Check was an eye-opener. We found savings we never knew existed.",
+      "company": "Manufacturing Client",
+      "logo": "https://picsum.photos/seed/mfg/100/40"
+    },
+    {
+        "quote": "Our CRM is finally a tool for growth, not a source of frustration. The automation is seamless.",
+        "company": "Real Estate Client",
+        "logo": "https://picsum.photos/seed/re/100/40"
+    }
+  ],
+  "cta": {
+    "headline": "Your business could be our next success story.",
+    "primaryCta": {
+      "text": "Book Your Data Health Check",
+      "href": "#contact"
+    },
+    "secondaryCta": {
+      "text": "Explore Our Services",
+      "href": "/services"
+    }
   }
-  
+}

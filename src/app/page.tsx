@@ -1,7 +1,6 @@
 import HeroSection from "@/components/sections/hero";
 import ClarityPath from "@/components/sections/clarity-path";
 import WhyUs from "@/components/sections/why-us";
-import CaseStories from "@/components/sections/case-stories";
 import Faq from "@/components/sections/faq";
 import Contact from "@/components/sections/contact";
 
@@ -19,7 +18,6 @@ export default function Home() {
         </div>
         <ClarityPath />
         <WhyUs />
-        <CaseStories />
         <Faq />
         <Contact />
       </div>

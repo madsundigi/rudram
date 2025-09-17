@@ -1,8 +1,7 @@
 [
   { "href": "/", "label": "Home" },
   { "href": "/services", "label": "Services" },
-  { "href": "#why-us", "label": "Why Us" },
-  { "href": "#cases", "label": "Case Stories" },
+  { "href": "/case-studies", "label": "Case Stories" },
   { "href": "/about", "label": "About Us"},
   { "href": "#faq", "label": "FAQs" },
   { "href": "#contact", "label": "Contact" }
