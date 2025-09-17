@@ -69,9 +69,13 @@ export function Confirmation({ formData, channel, onBack, onClose }: Confirmatio
 
     return (
         <form action={formAction} className="space-y-6">
-            {Object.entries(formData).map(([key, value]) => (
-                <input type="hidden" key={key} name={key} value={String(value)} />
-            ))}
+            {Object.entries(formData).map(([key, value]) => {
+                if (key !== 'consent') {
+                    return <input type="hidden" key={key} name={key} value={String(value)} />
+                }
+                return null;
+            })}
+             <input type="hidden" name="consent" value={formData.consent ? 'on' : 'off'} />
              <input type="hidden" name="contactChannel" value={channel} />
 
             <div className="space-y-2 text-sm p-4 rounded-md glass-morphic border border-primary/20">
