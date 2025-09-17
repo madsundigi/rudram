@@ -1,7 +1,7 @@
 
 "use client";
 
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Card, CardContent } from '@/components/ui/card';
@@ -9,6 +9,45 @@ import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { Search } from 'lucide-react';
 import blogContent from '@/app/content/blog.json';
+
+type Post = typeof blogContent.posts[0];
+
+const PostCard = ({ post }: { post: Post }) => {
+  const [formattedDate, setFormattedDate] = useState('');
+
+  useEffect(() => {
+    setFormattedDate(new Date(post.date).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' }));
+  }, [post.date]);
+
+  return (
+    <Link href={`/blog/${post.slug}`} passHref>
+      <Card className="glass-morphic card-glow border-primary/20 flex flex-col h-full overflow-hidden">
+        <div className="relative w-full h-56">
+            <Image
+                src={post.image}
+                alt={post.title}
+                fill
+                className="object-cover transition-transform duration-500 group-hover:scale-105"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+            <span className="absolute top-4 right-4 bg-primary/80 text-primary-foreground text-xs font-semibold px-3 py-1 rounded-full backdrop-blur-sm">
+                {post.category}
+            </span>
+        </div>
+        <CardContent className="p-6 flex-grow flex flex-col justify-between">
+          <div className="space-y-3">
+            <h3 className="text-xl font-bold text-foreground group-hover:text-primary transition-colors">{post.title}</h3>
+            <p className="text-muted-foreground text-sm line-clamp-3">{post.excerpt}</p>
+          </div>
+          <div className="mt-4 text-xs text-muted-foreground">
+            <span>{formattedDate}</span>
+          </div>
+        </CardContent>
+      </Card>
+    </Link>
+  );
+};
+
 
 export default function PostGrid() {
   const [searchTerm, setSearchTerm] = useState('');
@@ -57,31 +96,7 @@ export default function PostGrid() {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {filteredPosts.map((post) => (
-            <Link key={post.slug} href={`/blog/${post.slug}`} passHref>
-              <Card className="glass-morphic card-glow border-primary/20 flex flex-col h-full overflow-hidden">
-                <div className="relative w-full h-56">
-                    <Image
-                        src={post.image}
-                        alt={post.title}
-                        fill
-                        className="object-cover transition-transform duration-500 group-hover:scale-105"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-                    <span className="absolute top-4 right-4 bg-primary/80 text-primary-foreground text-xs font-semibold px-3 py-1 rounded-full backdrop-blur-sm">
-                        {post.category}
-                    </span>
-                </div>
-                <CardContent className="p-6 flex-grow flex flex-col justify-between">
-                  <div className="space-y-3">
-                    <h3 className="text-xl font-bold text-foreground group-hover:text-primary transition-colors">{post.title}</h3>
-                    <p className="text-muted-foreground text-sm line-clamp-3">{post.excerpt}</p>
-                  </div>
-                  <div className="mt-4 text-xs text-muted-foreground">
-                    <span>{new Date(post.date).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}</span>
-                  </div>
-                </CardContent>
-              </Card>
-            </Link>
+            <PostCard key={post.slug} post={post} />
           ))}
         </div>
 

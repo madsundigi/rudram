@@ -1,4 +1,6 @@
 
+'use client';
+
 import { notFound } from 'next/navigation';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
@@ -7,15 +9,19 @@ import { Twitter, Linkedin } from 'lucide-react';
 import Link from 'next/link';
 import blogContent from '@/app/content/blog.json';
 import { HealthCheckModal } from '@/components/modals/health-check-modal';
+import { useEffect, useState } from 'react';
 
-export async function generateStaticParams() {
-  return blogContent.posts.map((post) => ({
-    slug: post.slug,
-  }));
-}
+// This is now a client component to handle dynamic date formatting safely.
 
 export default function BlogPostPage({ params }: { params: { slug: string } }) {
+  const [formattedDate, setFormattedDate] = useState('');
   const post = blogContent.posts.find((p) => p.slug === params.slug);
+
+  useEffect(() => {
+    if (post) {
+      setFormattedDate(new Date(post.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }));
+    }
+  }, [post]);
 
   if (!post) {
     notFound();
@@ -50,7 +56,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
                     </div>
                 )}
                 <span>&bull;</span>
-                <time dateTime={post.date}>{new Date(post.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</time>
+                <time dateTime={post.date}>{formattedDate}</time>
             </div>
           </div>
         </div>
