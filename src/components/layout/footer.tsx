@@ -5,6 +5,7 @@ import settings from "@/app/content/settings.json";
 import navLinks from "@/app/content/nav-links.json";
 
 export default function Footer() {
+  const currentYear = new Date().getFullYear();
   return (
     <footer className="relative bg-background/50 py-12 mt-20 overflow-hidden">
         <div className="absolute inset-0 z-0 opacity-20">
@@ -42,7 +43,7 @@ export default function Footer() {
           </div>
         </div>
          <p className="text-center text-sm text-muted-foreground mt-8">
-            © {new Date().getFullYear()} {settings.companyName}. All rights reserved.
+            © {currentYear} {settings.companyName}. All rights reserved.
           </p>
       </div>
     </footer>
