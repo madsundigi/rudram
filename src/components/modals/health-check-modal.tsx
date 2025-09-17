@@ -1,11 +1,14 @@
+
 "use client";
 
 import { useState, useMemo } from 'react';
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription, DialogTrigger, DialogFooter, DialogClose } from "@/components/ui/dialog";
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription, DialogTrigger } from "@/components/ui/dialog";
 import ctaContent from '@/app/content/cta-texts.json';
 import { HealthCheckForm } from './health-check-form';
 import { ChannelSelect } from './channel-select';
 import { Confirmation } from './confirmation';
+import { LiveDemoForm } from './live-demo-form';
+import { DemoChannelSelect } from './demo-channel-select';
 
 export type Service = {
     id: string;
@@ -22,6 +25,8 @@ export type FormData = {
     message?: string;
     serviceId: string;
     consent: boolean;
+    currentTools?: string[];
+    demoType?: string;
 };
 
 export type ContactChannel = "whatsapp" | "call" | "email" | "calendly";
@@ -32,19 +37,21 @@ export function HealthCheckModal({ children, defaultServiceId }: { children: Rea
     const [formData, setFormData] = useState<Partial<FormData>>({ serviceId: defaultServiceId });
     const [channel, setChannel] = useState<ContactChannel | null>(null);
 
+    const serviceId = useMemo(() => formData.serviceId || defaultServiceId || 'health-check', [formData.serviceId, defaultServiceId]);
+
     const title = useMemo(() => {
+        const serviceCta = ctaContent[serviceId as keyof typeof ctaContent] || ctaContent.book_health_check;
         if (step === 3) return "Confirm Your Request";
         if (step === 2) return "Choose Your Contact Method";
-        const serviceCta = ctaContent[formData.serviceId as keyof typeof ctaContent] || ctaContent.book_health_check;
         return serviceCta.title;
-    }, [step, formData.serviceId]);
+    }, [step, serviceId]);
 
     const description = useMemo(() => {
+        const serviceCta = ctaContent[serviceId as keyof typeof ctaContent] || ctaContent.book_health_check;
         if (step === 3) return "Please review your details before submitting.";
         if (step === 2) return "How would you like us to get in touch?";
-        const serviceCta = ctaContent[formData.serviceId as keyof typeof ctaContent] || ctaContent.book_health_check;
         return serviceCta.description;
-    }, [step, formData.serviceId]);
+    }, [step, serviceId]);
     
     const handleClose = () => {
         setOpen(false);
@@ -55,45 +62,81 @@ export function HealthCheckModal({ children, defaultServiceId }: { children: Rea
         }, 300);
     }
     
+    const renderContent = () => {
+        switch (serviceId) {
+            case 'data-apps':
+                switch (step) {
+                    case 1:
+                        return (
+                            <LiveDemoForm
+                                onFormSubmit={(data) => {
+                                    setFormData(data);
+                                    setStep(2);
+                                }}
+                                defaultServiceId={serviceId}
+                            />
+                        );
+                    case 2:
+                        return (
+                            <DemoChannelSelect
+                                onChannelSelect={(selectedChannel) => {
+                                    // For now, we just close. Later we can add confirmation.
+                                    handleClose();
+                                }}
+                                onBack={() => setStep(1)}
+                            />
+                        )
+                    default:
+                        return <p>Something went wrong.</p>;
+                }
+            case 'health-check':
+            default:
+                switch (step) {
+                    case 1:
+                        return (
+                             <HealthCheckForm
+                                defaultServiceId={defaultServiceId}
+                                onFormSubmit={(data) => {
+                                    setFormData(data);
+                                    setStep(2);
+                                }}
+                            />
+                        );
+                    case 2:
+                        return (
+                            <ChannelSelect
+                                formData={formData}
+                                onChannelSelect={(selectedChannel) => {
+                                    setChannel(selectedChannel);
+                                    setStep(3);
+                                }}
+                                onBack={() => setStep(1)}
+                            />
+                        );
+                    case 3:
+                        return (
+                            <Confirmation
+                                formData={formData as FormData}
+                                channel={channel!}
+                                onBack={() => setStep(2)}
+                                onClose={handleClose}
+                            />
+                        )
+                    default:
+                        return <p>Something went wrong.</p>;
+                }
+        }
+    };
+    
     return (
-        <Dialog open={open} onOpenChange={setOpen}>
+        <Dialog open={open} onOpenChange={(isOpen) => !isOpen && handleClose()}>
             <DialogTrigger asChild>{children}</DialogTrigger>
             <DialogContent className="sm:max-w-[425px] md:sm:max-w-lg glass-morphic" onInteractOutside={handleClose}>
                 <DialogHeader>
                     <DialogTitle className="text-2xl text-primary text-glow">{title}</DialogTitle>
                     <DialogDescription>{description}</DialogDescription>
                 </DialogHeader>
-                
-                {step === 1 && (
-                    <HealthCheckForm
-                        defaultServiceId={defaultServiceId}
-                        onFormSubmit={(data) => {
-                            setFormData(data);
-                            setStep(2);
-                        }}
-                    />
-                )}
-
-                {step === 2 && (
-                    <ChannelSelect
-                        formData={formData}
-                        onChannelSelect={(selectedChannel) => {
-                            setChannel(selectedChannel);
-                            setStep(3);
-                        }}
-                        onBack={() => setStep(1)}
-                    />
-                )}
-                
-                {step === 3 && formData && channel && (
-                    <Confirmation
-                        formData={formData as FormData}
-                        channel={channel}
-                        onBack={() => setStep(2)}
-                        onClose={handleClose}
-                    />
-                )}
-
+                {renderContent()}
             </DialogContent>
         </Dialog>
     );
