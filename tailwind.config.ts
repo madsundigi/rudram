@@ -80,7 +80,7 @@ export default {
           from: {
             height: 'var(--radix-accordion-content-height)',
           },
-          to: {
+to: {
             height: '0',
           },
         },
@@ -108,6 +108,10 @@ export default {
           '0%': { transform: 'scale(1)' },
           '100%': { transform: 'scale(1.1)' },
         },
+        'spin-slow': {
+          'from': { transform: 'rotate(0deg)' },
+          'to': { transform: 'rotate(360deg)' },
+        }
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
@@ -118,6 +122,7 @@ export default {
         'text-reveal': 'text-reveal 1s cubic-bezier(0.76, 0, 0.24, 1) forwards',
         'pan': 'pan 20s linear infinite',
         'zoom': 'zoom 8s ease-in-out infinite alternate',
+        'spin-slow': 'spin-slow 20s linear infinite',
       },
     },
   },

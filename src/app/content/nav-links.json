@@ -3,7 +3,7 @@
   { "href": "/services", "label": "Services" },
   { "href": "#why-us", "label": "Why Us" },
   { "href": "#cases", "label": "Case Stories" },
-  { "href": "#team", "label": "About Us"},
+  { "href": "/about", "label": "About Us"},
   { "href": "#faq", "label": "FAQs" },
   { "href": "#contact", "label": "Contact" }
 ]

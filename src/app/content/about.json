@@ -1,0 +1,58 @@
+{
+    "hero": {
+      "headline": "Turning Complexity into Confidence",
+      "subheadline": "Businesses are drowning in data but starving for clarity. Rudram Data Solutions exists to change that."
+    },
+    "whoWeAre": {
+      "headline": "Who We Are",
+      "subheadline": "Founded to help businesses move from scattered spreadsheets to real-time decision systems.",
+      "founders": [
+        {
+          "name": "Shivam Maria",
+          "role": "CEO & Co-Founder",
+          "bio": "Expert in transforming complex data into actionable business strategy.",
+          "image": {
+            "src": "https://picsum.photos/seed/shivam/400/400",
+            "alt": "Portrait of Shivam Maria"
+          },
+          "linkedinUrl": "#"
+        },
+        {
+          "name": "Parav Pathak",
+          "role": "CTO & Co-Founder",
+          "bio": "Specializes in building robust, scalable data infrastructure from the ground up.",
+          "image": {
+            "src": "https://picsum.photos/seed/parav/400/400",
+            "alt": "Portrait of Parav Pathak"
+          },
+          "linkedinUrl": "#"
+        }
+      ]
+    },
+    "ourVision": {
+      "headline": "Our Vision",
+      "statement": "To make data a daily advantage, not a daily headache—for every size of business."
+    },
+    "ourValues": {
+      "headline": "Our Values",
+      "subheadline": "The principles that guide our work and partnerships.",
+      "values": [
+        {
+          "title": "Clarity over Complexity",
+          "description": "We believe in simple, powerful solutions. No jargon, no black boxes—just clear insights that everyone can understand and act on.",
+          "icon": "Clarity"
+        },
+        {
+          "title": "Long-term Partnerships",
+          "description": "We are more than consultants; we are your dedicated data partners. Your success is our success, and we're in it for the long haul.",
+          "icon": "Partnership"
+        },
+        {
+          "title": "Privacy & Trust",
+          "description": "Your data is your most valuable asset. We treat it with the highest level of security, confidentiality, and integrity. Your trust is our foundation.",
+          "icon": "Trust"
+        }
+      ]
+    }
+  }
+  
