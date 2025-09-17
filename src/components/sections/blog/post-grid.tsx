@@ -41,7 +41,7 @@ const PostCard = ({ post }: { post: Post }) => {
             <p className="text-muted-foreground text-sm line-clamp-3">{post.excerpt}</p>
           </div>
           <div className="mt-4 text-xs text-muted-foreground">
-            <time dateTime={post.date}>{formattedDate || ' '}</time>
+            <time dateTime={post.date}>{formattedDate}</time>
           </div>
         </CardContent>
       </Card>

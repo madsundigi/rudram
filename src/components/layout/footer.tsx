@@ -8,11 +8,9 @@ import navLinks from "@/app/content/nav-links.json";
 import { useEffect, useState } from "react";
 
 export default function Footer() {
-  const [currentYear, setCurrentYear] = useState(new Date().getFullYear());
+  const [currentYear, setCurrentYear] = useState<number | null>(null);
 
   useEffect(() => {
-    // This ensures the component has mounted on the client before setting the year
-    // and avoids a server-client mismatch.
     setCurrentYear(new Date().getFullYear());
   }, []);
 
@@ -53,7 +51,7 @@ export default function Footer() {
           </div>
         </div>
          <p className="text-center text-sm text-muted-foreground mt-8">
-            © {currentYear} {settings.companyName}. All rights reserved.
+            © {currentYear || new Date().getFullYear()} {settings.companyName}. All rights reserved.
           </p>
       </div>
     </footer>

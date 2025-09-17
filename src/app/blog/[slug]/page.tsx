@@ -56,7 +56,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
                     </div>
                 )}
                 <span>&bull;</span>
-                <time dateTime={post.date}>{formattedDate || new Date(post.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</time>
+                <time dateTime={post.date}>{formattedDate}</time>
             </div>
           </div>
         </div>

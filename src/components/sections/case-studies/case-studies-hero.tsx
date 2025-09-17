@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react';
 import content from "@/app/content/case-stories.json";
 
 function CountUp({ end, duration = 2 }: { end: number; duration?: number }) {
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useState(end);
   const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
@@ -14,6 +14,8 @@ function CountUp({ end, duration = 2 }: { end: number; duration?: number }) {
 
   useEffect(() => {
     if (!isMounted) return;
+    
+    setCount(0); // Start from 0 on client
 
     let startTime: number | null = null;
     let animationFrame: number;
@@ -32,10 +34,6 @@ function CountUp({ end, duration = 2 }: { end: number; duration?: number }) {
 
     return () => cancelAnimationFrame(animationFrame);
   }, [end, duration, isMounted]);
-
-  if (!isMounted) {
-    return <span>{end}</span>;
-  }
 
   return <span>{count}</span>;
 }
