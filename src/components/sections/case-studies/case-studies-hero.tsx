@@ -30,7 +30,7 @@ function CountUp({ end, duration = 2 }: { end: number; duration?: number }) {
   }, [end, duration, isMounted]);
   
   if (!isMounted) {
-    return <span>{end}</span>;
+    return null;
   }
 
   return <span>{count}</span>;
