@@ -1,3 +1,4 @@
+
 "use client";
 
 import Link from 'next/link';
@@ -17,7 +18,7 @@ export default function CtaBanner() {
                         {headline}
                     </h2>
                     <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                        <HealthCheckModal>
+                        <HealthCheckModal defaultServiceId="health-check">
                             <Button size="lg" className="btn-glow text-lg px-8 py-6 bg-gradient-to-r from-teal-400 to-cyan-500 hover:from-teal-500 hover:to-cyan-600 border border-teal-300/50 text-white animate-pulse-glow">
                                 {primaryCta.text}
                             </Button>

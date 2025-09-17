@@ -1,3 +1,4 @@
+
 import { Card, CardContent } from "@/components/ui/card";
 import { TrendingUp, Users, PieChart, ArrowRight } from "lucide-react";
 import content from "@/app/content/case-stories.json";

@@ -29,7 +29,7 @@ export default function Header() {
           ))}
         </nav>
         <div className="flex items-center gap-4">
-          <HealthCheckModal>
+          <HealthCheckModal defaultServiceId="health-check">
             <Button
               variant="default"
               className="hidden md:inline-flex btn-glow bg-primary/80 hover:bg-primary"
@@ -64,7 +64,7 @@ export default function Header() {
                     {link.label}
                   </Link>
                 ))}
-                <HealthCheckModal>
+                <HealthCheckModal defaultServiceId="health-check">
                   <Button variant="default" className="w-full btn-glow">
                     {settings.cta.primary.text}
                   </Button>

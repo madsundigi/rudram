@@ -1,3 +1,4 @@
+
 "use client";
 
 import aboutContent from "@/app/content/about.json";

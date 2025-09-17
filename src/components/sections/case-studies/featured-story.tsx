@@ -1,3 +1,4 @@
+
 "use client";
 
 import content from "@/app/content/case-stories.json";
@@ -6,6 +7,7 @@ import { Bar, BarChart, ResponsiveContainer, XAxis, YAxis, Tooltip } from "recha
 import { ArrowRight, Sheet, LayoutDashboard } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import { HealthCheckModal } from "@/components/modals/health-check-modal";
 
 const icons: { [key: string]: React.ReactNode } = {
   Sheet: <Sheet className="h-10 w-10 text-red-400" />,
@@ -88,11 +90,11 @@ export default function FeaturedStory() {
         </div>
 
         <div className="mt-16 text-center">
-            <Link href={featuredStory.cta.href}>
+            <HealthCheckModal defaultServiceId="health-check">
                 <Button size="lg" className="btn-glow px-8 py-6 text-lg">
                     {featuredStory.cta.text}
                 </Button>
-            </Link>
+            </HealthCheckModal>
         </div>
       </div>
     </section>

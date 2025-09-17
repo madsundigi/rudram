@@ -1,3 +1,4 @@
+
 "use client";
 
 import contactContent from "@/app/content/contact.json";

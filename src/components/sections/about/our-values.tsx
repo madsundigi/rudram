@@ -1,3 +1,4 @@
+
 import { Gem, Handshake, ShieldCheck } from "lucide-react";
 import aboutContent from "@/app/content/about.json";
 

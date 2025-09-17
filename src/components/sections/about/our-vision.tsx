@@ -1,3 +1,4 @@
+
 import aboutContent from "@/app/content/about.json";
 import { Compass } from "lucide-react";
 

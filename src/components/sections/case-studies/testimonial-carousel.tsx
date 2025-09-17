@@ -1,3 +1,4 @@
+
 "use client";
 
 import Image from "next/image";
@@ -14,7 +15,8 @@ import { MessageSquare } from "lucide-react";
 import content from "@/app/content/case-stories.json";
 import Autoplay from "embla-carousel-autoplay";
 import { useRef } from "react";
-import Link from "next/link";
+import { HealthCheckModal } from "@/components/modals/health-check-modal";
+import { StartJourneyModal } from "@/components/modals/start-journey-modal";
 
 export default function TestimonialCarousel() {
     const { testimonials, cta } = content;
@@ -59,16 +61,16 @@ export default function TestimonialCarousel() {
                 {cta.headline}
             </h2>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                <Link href={cta.primaryCta.href}>
+                <HealthCheckModal defaultServiceId="health-check">
                     <Button size="lg" className="btn-glow text-lg px-8 py-6 bg-gradient-to-r from-teal-400 to-cyan-500 hover:from-teal-500 hover:to-cyan-600 border border-teal-300/50 text-white animate-pulse-glow">
                         {cta.primaryCta.text}
                     </Button>
-                </Link>
-                <Link href={cta.secondaryCta.href}>
+                </HealthCheckModal>
+                <StartJourneyModal>
                     <Button size="lg" variant="outline" className="text-lg px-8 py-6 glass-morphic border-white/50 hover:border-white text-white hover:bg-white/10">
                         {cta.secondaryCta.text}
                     </Button>
-                </Link>
+                </StartJourneyModal>
             </div>
         </div>
 

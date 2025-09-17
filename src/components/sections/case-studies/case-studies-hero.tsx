@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useEffect, useState } from 'react';
@@ -23,7 +24,9 @@ function CountUp({ end, duration = 2 }: { end: number; duration?: number }) {
         requestAnimationFrame(animate);
       }
     };
-    requestAnimationFrame(animate);
+    const animationFrame = requestAnimationFrame(animate);
+
+    return () => cancelAnimationFrame(animationFrame);
   }, [end, duration, isMounted]);
   
   if (!isMounted) {
