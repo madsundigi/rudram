@@ -1,8 +1,8 @@
-
 "use client";
 
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 import Autoplay from "embla-carousel-autoplay";
 import {
   Carousel,
@@ -13,6 +13,7 @@ import {
 } from "@/components/ui/carousel";
 import { Button } from "@/components/ui/button";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
+import heroContent from "@/app/content/hero.json";
 
 const heroImages = PlaceHolderImages.filter(img => img.id.startsWith('hero-'));
 
@@ -62,24 +63,28 @@ export default function HeroSection() {
             className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tighter text-glow bg-clip-text text-transparent bg-gradient-to-b from-white to-neutral-300 animate-text-reveal"
             style={{ animationDelay: '0.2s', animationFillMode: 'backwards' }}
           >
-            From Data Chaos to Data Clarity
+            {heroContent.headline}
           </h1>
           <p
             className="max-w-3xl mx-auto text-neutral-200 md:text-xl lg:text-2xl opacity-80 animate-text-reveal"
             style={{ animationDelay: '0.5s', animationFillMode: 'backwards' }}
           >
-            We help businesses turn scattered spreadsheets and reports into simple tools and smarter decisions.
+            {heroContent.subheadline}
           </p>
           <div
             className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-text-reveal"
             style={{ animationDelay: '0.8s', animationFillMode: 'backwards' }}
           >
-            <Button size="lg" className="btn-glow text-lg px-8 py-6 bg-gradient-to-r from-teal-400 to-cyan-500 hover:from-teal-500 hover:to-cyan-600 border border-teal-300/50 text-white">
-              Book a Data Health Check
-            </Button>
-            <Button size="lg" variant="outline" className="text-lg px-8 py-6 glass-morphic border-white/50 hover:border-white text-white hover:bg-white/10">
-              See How It Works
-            </Button>
+            <Link href={heroContent.cta.primary.href}>
+              <Button size="lg" className="btn-glow text-lg px-8 py-6 bg-gradient-to-r from-teal-400 to-cyan-500 hover:from-teal-500 hover:to-cyan-600 border border-teal-300/50 text-white">
+                {heroContent.cta.primary.text}
+              </Button>
+            </Link>
+            <Link href={heroContent.cta.secondary.href}>
+              <Button size="lg" variant="outline" className="text-lg px-8 py-6 glass-morphic border-white/50 hover:border-white text-white hover:bg-white/10">
+                {heroContent.cta.secondary.text}
+              </Button>
+            </Link>
           </div>
         </div>
       </div>

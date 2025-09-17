@@ -1,0 +1,28 @@
+{
+  "headline": "The 3-Step Path to Data Clarity",
+  "subheadline": "Our proven process turns your data mess into a strategic asset.",
+  "steps": [
+    {
+      "id": 1,
+      "title": "Step 1: Data Health Check",
+      "description": "We connect your disparate data sources into a single, reliable database, creating one source of truth.",
+      "icon": "data-health-check"
+    },
+    {
+      "id": 2,
+      "title": "Step 2: Interactive Data Apps",
+      "description": "Your raw data is transformed into live, interactive dashboards that make complex information easy to understand.",
+      "icon": "interactive-data-apps"
+    },
+    {
+      "id": 3,
+      "title": "Step 3: Data Strategy & Advisory",
+      "description": "With clear insights, you can make smarter, faster decisions that fuel business growth and efficiency.",
+      "icon": "data-strategy-advisory"
+    }
+  ],
+  "cta": {
+    "text": "Start Your Journey",
+    "href": "#contact"
+  }
+}

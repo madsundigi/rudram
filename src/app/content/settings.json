@@ -1,0 +1,19 @@
+{
+  "appName": "Rudram",
+  "companyName": "Rudram Data Solutions",
+  "contact": {
+    "email": "contact@rudram.dev",
+    "phone": "+1 (555) 123-4567"
+  },
+  "socials": {
+    "twitter": "#",
+    "linkedin": "#",
+    "github": "#"
+  },
+  "cta": {
+    "primary": {
+      "text": "Book a Data Health Check",
+      "href": "#contact"
+    }
+  }
+}

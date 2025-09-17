@@ -1,0 +1,20 @@
+{
+    "headline": "Let's start with a quick chat",
+    "subheadline": "Tell us about your data challenges, and we'll tell you how we can help.",
+    "calendly": {
+      "headline": "Book via Calendly",
+      "subheadline": "The fastest way to get on our calendar.",
+      "cta": {
+        "text": "Book Your Health Check",
+        "href": "#"
+      }
+    },
+    "form": {
+      "namePlaceholder": "Your Name",
+      "emailPlaceholder": "Your Email",
+      "subjectPlaceholder": "Subject",
+      "messagePlaceholder": "How can we help?",
+      "ctaText": "Send Message"
+    }
+  }
+  

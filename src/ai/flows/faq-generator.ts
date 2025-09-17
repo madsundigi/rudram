@@ -17,6 +17,7 @@ const FAQGeneratorInputSchema = z.object({
       z.object({
         question: z.string().describe('The FAQ question.'),
         answer: z.string().describe('The answer to the FAQ question.'),
+        icon: z.string().optional().describe('An identifier for an icon.')
       })
     )
     .describe('An array of FAQ questions and answers.'),

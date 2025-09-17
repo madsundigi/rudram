@@ -1,24 +1,13 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Database, AreaChart, Compass } from "lucide-react";
+import clarityPath from "@/app/content/clarity-path.json";
 
-const steps = [
-  {
-    icon: <Database className="h-10 w-10 text-primary" />,
-    title: "Step 1: Unify Your Data",
-    description: "We connect your disparate data sources into a single, reliable database, creating one source of truth.",
-  },
-  {
-    icon: <AreaChart className="h-10 w-10 text-primary" />,
-    title: "Step 2: Visualize Insights",
-    description: "Your raw data is transformed into live, interactive dashboards that make complex information easy to understand.",
-  },
-  {
-    icon: <Compass className="h-10 w-10 text-primary" />,
-    title: "Step 3: Drive Growth",
-    description: "With clear insights, you can make smarter, faster decisions that fuel business growth and efficiency.",
-  },
-];
+const icons: { [key: string]: React.ReactNode } = {
+  "data-health-check": <Database className="h-10 w-10 text-primary" />,
+  "interactive-data-apps": <AreaChart className="h-10 w-10 text-primary" />,
+  "data-strategy-advisory": <Compass className="h-10 w-10 text-primary" />,
+};
 
 export default function ClarityPath() {
   return (
@@ -26,10 +15,10 @@ export default function ClarityPath() {
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center space-y-4 mb-16">
           <h2 className="text-3xl md:text-5xl font-bold tracking-tighter bg-clip-text text-transparent bg-gradient-to-b from-foreground/90 to-foreground/60">
-            The 3-Step Path to Data Clarity
+            {clarityPath.headline}
           </h2>
           <p className="max-w-3xl mx-auto text-muted-foreground md:text-xl">
-            Our proven process turns your data mess into a strategic asset.
+            {clarityPath.subheadline}
           </p>
         </div>
 
@@ -38,11 +27,11 @@ export default function ClarityPath() {
           <div className="absolute top-1/2 left-0 w-full h-0.5 bg-primary animate-gradient-shift bg-[length:200%_200%] opacity-70" style={{'maskImage': 'linear-gradient(to right, transparent, white, transparent)'}}/>
 
           <div className="grid md:grid-cols-3 gap-8 md:gap-16 relative">
-            {steps.map((step, index) => (
-              <Card key={index} className="glass-morphic text-center p-6 card-glow border-primary/20">
+            {clarityPath.steps.map((step) => (
+              <Card key={step.id} className="glass-morphic text-center p-6 card-glow border-primary/20">
                 <CardHeader className="items-center">
                   <div className="w-20 h-20 rounded-full glass-morphic flex items-center justify-center mb-4 border-2 border-primary/30 animate-pulse-glow">
-                    {step.icon}
+                    {icons[step.icon]}
                   </div>
                   <CardTitle className="text-2xl font-bold text-foreground">
                     {step.title}
@@ -58,7 +47,7 @@ export default function ClarityPath() {
         
         <div className="mt-16 text-center">
           <Button size="lg" className="btn-glow rounded-full w-48 h-48 text-lg animate-pulse-glow">
-            Start Your Journey
+            {clarityPath.cta.text}
           </Button>
         </div>
       </div>

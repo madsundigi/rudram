@@ -1,0 +1,50 @@
+{
+    "headline": "From Messy to Meaningful",
+    "subheadline": "See how we've transformed businesses like yours.",
+    "stories": [
+      {
+        "title": "Retail",
+        "challenge": "Chaotic spreadsheets",
+        "solution": "Live sales dashboards",
+        "visuals": {
+          "before": {"icon": "before-spreadsheet"},
+          "after": {"icon": "after-dashboard"}
+        },
+        "result": {
+          "metric": "80% Time Saved",
+          "description": "Automated reporting freed up the sales team to focus on customers, not data entry."
+        }
+      },
+      {
+        "title": "Manufacturing",
+        "challenge": "Costly material leaks",
+        "solution": "Real-time waste tracking",
+         "visuals": {
+          "before": {"icon": "before-waste"},
+          "after": {"icon": "after-tracking"}
+        },
+        "result": {
+          "metric": "15% Cost Reduction",
+          "description": "Pinpointed inefficiencies in the production line, leading to significant material savings."
+        }
+      },
+      {
+        "title": "Real Estate",
+        "challenge": "Disorganized contacts",
+        "solution": "Automated CRM",
+        "visuals": {
+          "before": {"icon": "before-contacts"},
+          "after": {"icon": "after-crm"}
+        },
+        "result": {
+          "metric": "40% Faster Follow-ups",
+          "description": "Streamlined client management, ensuring no lead was left behind and improving client relations."
+        }
+      }
+    ],
+    "cta": {
+      "text": "See What We Can Do For You",
+      "href": "#contact"
+    }
+  }
+  

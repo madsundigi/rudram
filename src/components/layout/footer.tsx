@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Mountain, Twitter, Linkedin, Github } from "lucide-react";
+import settings from "@/app/content/settings.json";
 
 export default function Footer() {
   return (
@@ -11,19 +12,19 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
           <div className="flex items-center gap-2">
             <Mountain className="h-6 w-6 text-primary" />
-            <span className="text-xl font-bold text-foreground">Rudram</span>
+            <span className="text-xl font-bold text-foreground">{settings.appName}</span>
           </div>
           <p className="text-center text-sm text-muted-foreground">
-            © {new Date().getFullYear()} Rudram Data Solutions. All rights reserved.
+            © {new Date().getFullYear()} {settings.companyName}. All rights reserved.
           </p>
           <div className="flex justify-center md:justify-end items-center gap-4">
-            <Link href="#" aria-label="Twitter">
+            <Link href={settings.socials.twitter} aria-label="Twitter">
               <Twitter className="h-5 w-5 text-muted-foreground transition-colors hover:text-primary" />
             </Link>
-            <Link href="#" aria-label="LinkedIn">
+            <Link href={settings.socials.linkedin} aria-label="LinkedIn">
               <Linkedin className="h-5 w-5 text-muted-foreground transition-colors hover:text-primary" />
             </Link>
-            <Link href="#" aria-label="GitHub">
+            <Link href={settings.socials.github} aria-label="GitHub">
               <Github className="h-5 w-5 text-muted-foreground transition-colors hover:text-primary" />
             </Link>
           </div>

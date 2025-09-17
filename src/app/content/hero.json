@@ -1,0 +1,14 @@
+{
+    "headline": "From Data Chaos to Data Clarity",
+    "subheadline": "We help businesses turn scattered spreadsheets and reports into simple tools and smarter decisions.",
+    "cta": {
+        "primary": {
+            "text": "Book a Data Health Check",
+            "href": "#contact"
+        },
+        "secondary": {
+            "text": "See How It Works",
+            "href": "#path"
+        }
+    }
+}
