@@ -90,12 +90,13 @@ export function HealthCheckModal({ children, defaultServiceId }: { children: Rea
                         return <p>Something went wrong.</p>;
                 }
             case 'health-check':
+            case 'strategy-advisory':
             default:
                 switch (step) {
                     case 1:
                         return (
                              <HealthCheckForm
-                                defaultServiceId={defaultServiceId}
+                                defaultServiceId={serviceId}
                                 onFormSubmit={(data) => {
                                     setFormData(data);
                                     setStep(2);
