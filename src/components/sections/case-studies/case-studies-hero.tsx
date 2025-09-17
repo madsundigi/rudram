@@ -16,15 +16,18 @@ function CountUp({ end, duration = 2 }: { end: number; duration?: number }) {
     if (!isMounted) return;
 
     let startTime: number | null = null;
+    let animationFrame: number;
+    
     const animate = (timestamp: number) => {
       if (!startTime) startTime = timestamp;
       const progress = Math.min((timestamp - startTime) / (duration * 1000), 1);
       setCount(Math.floor(progress * end));
       if (progress < 1) {
-        requestAnimationFrame(animate);
+        animationFrame = requestAnimationFrame(animate);
       }
     };
-    const animationFrame = requestAnimationFrame(animate);
+
+    animationFrame = requestAnimationFrame(animate);
 
     return () => cancelAnimationFrame(animationFrame);
   }, [end, duration, isMounted]);
