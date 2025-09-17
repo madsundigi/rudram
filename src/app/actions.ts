@@ -13,7 +13,7 @@ const FormSchema = z.object({
   businessSize: z.enum(["1-10", "11-50", "51-250", "250+"]),
   message: z.string().optional(),
   serviceId: z.string(),
-  contactChannel: z.enum(["whatsapp", "call", "email"]),
+  contactChannel: z.enum(["whatsapp", "call", "email", "calendly"]),
   consent: z.boolean().refine(val => val === true, { message: "You must consent to be contacted." }),
 });
 

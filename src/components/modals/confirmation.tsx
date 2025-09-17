@@ -56,7 +56,7 @@ export function Confirmation({ formData, channel, onBack, onClose }: Confirmatio
                     <AlertDialogHeader>
                         <AlertDialogTitle className="text-primary text-glow">Request Sent!</AlertDialogTitle>
                         <AlertDialogDescription>
-                            {state.message} Our team will be in touch shortly via your chosen method.
+                            {state.message}
                         </AlertDialogDescription>
                     </AlertDialogHeader>
                     <AlertDialogFooter>
@@ -72,9 +72,9 @@ export function Confirmation({ formData, channel, onBack, onClose }: Confirmatio
             <input type="hidden" name="name" value={formData.name} />
             <input type="hidden" name="email" value={formData.email} />
             <input type="hidden" name="company" value={formData.company} />
-            <input type="hidden" name="phone" value={formData.phone} />
+            <input type="hidden" name="phone" value={formData.phone || ''} />
             <input type="hidden" name="businessSize" value={formData.businessSize} />
-            <input type="hidden" name="message" value={formData.message} />
+            <input type="hidden" name="message" value={formData.message || ''} />
             <input type="hidden" name="serviceId" value={formData.serviceId} />
             <input type="hidden" name="consent" value={formData.consent ? 'on' : 'off'} />
             <input type="hidden" name="contactChannel" value={channel} />
