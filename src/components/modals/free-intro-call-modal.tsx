@@ -30,7 +30,7 @@ export function FreeIntroCallModal({ children }: { children: React.ReactNode }) 
                 <div className="flex flex-col items-center justify-center gap-4 pt-4">
                     <Link href={teamContacts.introCallCalendarLink} target="_blank" rel="noopener noreferrer" className="w-full">
                         <Button size="lg" className="w-full btn-glow">
-                            Book 15-Min Intro Call
+                            Book 30-Min Call
                         </Button>
                     </Link>
                     <Button size="lg" variant="outline" onClick={handleClose} className="w-full">

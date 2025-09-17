@@ -57,7 +57,7 @@ export default function Faq() {
             <h3 className="text-2xl font-bold mb-4">{faqContent.cta.headline}</h3>
             <FreeIntroCallModal>
                 <Button size="lg" className="btn-glow px-8 py-6 text-lg">
-                    {faqContent.cta.buttonText}
+                    Book a 30-Min Call
                 </Button>
             </FreeIntroCallModal>
         </div>
