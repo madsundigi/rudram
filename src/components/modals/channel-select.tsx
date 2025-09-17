@@ -26,12 +26,12 @@ export function ChannelSelect({ formData, onChannelSelect, onBack }: ChannelSele
         \nEmail: ${formData.email}`
     );
     const whatsappUrl = `https://wa.me/${teamContacts.whatsapp}?text=${whatsAppMessage}`;
-    const telUrl = `tel:+61892884503`;
+    const telUrl = `tel:${teamContacts.phone}`;
 
     return (
         <div className="space-y-6">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" onClick={() => onChannelSelect('whatsapp')}>
                     <Card className="glass-morphic card-glow border-primary/20 text-center cursor-pointer hover:border-primary h-full">
                         <CardHeader className="items-center pb-2">
                             <MessageCircle className="w-10 h-10 mb-2 text-primary" />
@@ -43,7 +43,7 @@ export function ChannelSelect({ formData, onChannelSelect, onBack }: ChannelSele
                     </Card>
                 </a>
 
-                <a href={telUrl}>
+                <a href={telUrl} onClick={() => onChannelSelect('call')}>
                     <Card className="glass-morphic card-glow border-primary/20 text-center cursor-pointer hover:border-primary h-full">
                         <CardHeader className="items-center pb-2">
                             <Phone className="w-10 h-10 mb-2 text-primary" />
@@ -71,15 +71,17 @@ export function ChannelSelect({ formData, onChannelSelect, onBack }: ChannelSele
                     </Card>
                 ))}
                  <Link href={teamContacts.primaryCalendarLink} target="_blank" passHref>
-                    <Card className="glass-morphic card-glow border-primary/20 text-center cursor-pointer hover:border-primary h-full">
-                         <CardHeader className="items-center pb-2">
-                            <Calendar className="w-10 h-10 mb-2 text-primary" />
-                            <CardTitle className="text-base font-bold">Book on Calendar</CardTitle>
-                        </CardHeader>
-                        <CardContent>
-                            <CardDescription>Choose your own time</CardDescription>
-                        </CardContent>
-                    </Card>
+                    <a onClick={() => onChannelSelect('calendly')}>
+                        <Card className="glass-morphic card-glow border-primary/20 text-center cursor-pointer hover:border-primary h-full">
+                            <CardHeader className="items-center pb-2">
+                                <Calendar className="w-10 h-10 mb-2 text-primary" />
+                                <CardTitle className="text-base font-bold">Book on Calendar</CardTitle>
+                            </CardHeader>
+                            <CardContent>
+                                <CardDescription>Choose your own time</CardDescription>
+                            </CardContent>
+                        </Card>
+                    </a>
                 </Link>
             </div>
             <div className="flex justify-start pt-4">

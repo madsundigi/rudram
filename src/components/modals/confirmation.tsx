@@ -35,7 +35,7 @@ function SubmitButton() {
     const { pending } = useFormStatus();
     return (
         <Button type="submit" className="btn-glow" disabled={pending}>
-            {pending ? 'Submitting...' : 'Confirm & Send Request'}
+            {pending ? 'Submitting...' : 'Confirm & Send'}
         </Button>
     );
 }
@@ -65,6 +65,14 @@ export function Confirmation({ formData, channel, onBack, onClose }: Confirmatio
                 </AlertDialogContent>
             </AlertDialog>
         )
+    }
+
+    if (channel === 'whatsapp' || channel === 'call' || channel === 'calendly') {
+         useEffect(() => {
+            // Automatically close the modal for instant redirect channels
+            onClose();
+        }, [onClose]);
+        return null;
     }
 
     return (

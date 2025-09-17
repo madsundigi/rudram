@@ -24,8 +24,8 @@ export default function ClarityPath() {
         </div>
 
         <div className="relative">
-          <div className="absolute top-1/2 left-0 w-full h-0.5 bg-primary/20 -translate-y-1/2" />
-          <div className="absolute top-1/2 left-0 w-full h-0.5 bg-primary animate-gradient-shift bg-[length:200%_200%] opacity-70" style={{'maskImage': 'linear-gradient(to right, transparent, white, transparent)'}}/>
+          <div className="absolute top-1/2 left-0 w-full h-0.5 bg-primary/20 -translate-y-1/2 hidden md:block" />
+          <div className="absolute top-1/2 left-0 w-full h-0.5 bg-primary animate-gradient-shift bg-[length:200%_200%] opacity-70 hidden md:block" style={{'maskImage': 'linear-gradient(to right, transparent, white, transparent)'}}/>
 
           <div className="grid md:grid-cols-3 gap-8 md:gap-16 relative">
             {clarityPath.steps.map((step) => (
@@ -48,7 +48,7 @@ export default function ClarityPath() {
         
         <div className="mt-16 text-center">
           <StartJourneyModal>
-            <Button size="lg" className="btn-glow rounded-full w-48 h-48 text-lg animate-pulse-glow">
+            <Button size="lg" className="btn-glow rounded-full w-48 h-48 text-lg flex items-center justify-center animate-pulse-glow">
               {clarityPath.cta.text}
             </Button>
           </StartJourneyModal>
