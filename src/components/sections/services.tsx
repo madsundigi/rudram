@@ -1,6 +1,7 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
+import { HealthCheckModal } from "@/components/modals/health-check-modal";
 import { CheckCircle, Stethoscope, AreaChart, Compass, Server, BarChart, FileText, Share2, Award, Zap, Users, PieChart, Map, TrendingUp, Key } from "lucide-react";
 import servicesContent from "@/app/content/services.json";
 
@@ -64,9 +65,11 @@ export default function Services() {
                                 <p className="italic text-primary/80 text-lg font-semibold border-l-4 border-primary/50 pl-4 py-2 text-left self-stretch lg:self-start max-w-lg">
                                   {service.valueProposition}
                                 </p>
-                                <Button size="lg" className="btn-glow px-8 py-6 text-lg">
-                                    {service.cta.text}
-                                </Button>
+                                <HealthCheckModal defaultServiceId={service.id}>
+                                    <Button size="lg" className="btn-glow px-8 py-6 text-lg">
+                                        {service.cta.text}
+                                    </Button>
+                                </HealthCheckModal>
                             </div>
                         </div>
                     ))}
@@ -75,5 +78,3 @@ export default function Services() {
         </section>
     );
 }
-
-    

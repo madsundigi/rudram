@@ -35,14 +35,16 @@ export function HealthCheckModal({ children, defaultServiceId }: { children: Rea
     const title = useMemo(() => {
         if (step === 3) return "Confirm Your Request";
         if (step === 2) return "Choose Your Contact Method";
-        return ctaContent.book_health_check.title;
-    }, [step]);
+        const serviceCta = ctaContent[formData.serviceId as keyof typeof ctaContent] || ctaContent.book_health_check;
+        return serviceCta.title;
+    }, [step, formData.serviceId]);
 
     const description = useMemo(() => {
         if (step === 3) return "Please review your details before submitting.";
         if (step === 2) return "How would you like us to get in touch?";
-        return ctaContent.book_health_check.description;
-    }, [step]);
+        const serviceCta = ctaContent[formData.serviceId as keyof typeof ctaContent] || ctaContent.book_health_check;
+        return serviceCta.description;
+    }, [step, formData.serviceId]);
     
     const handleClose = () => {
         setOpen(false);
