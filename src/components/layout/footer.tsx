@@ -1,6 +1,8 @@
+
 import Link from "next/link";
 import { Mountain, Twitter, Linkedin, Github } from "lucide-react";
 import settings from "@/app/content/settings.json";
+import navLinks from "@/app/content/nav-links.json";
 
 export default function Footer() {
   return (
@@ -10,13 +12,23 @@ export default function Footer() {
         </div>
       <div className="container mx-auto px-4 md:px-6 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-2 justify-center md:justify-start">
             <Mountain className="h-6 w-6 text-primary" />
             <span className="text-xl font-bold text-foreground">{settings.appName}</span>
           </div>
-          <p className="text-center text-sm text-muted-foreground">
-            © {new Date().getFullYear()} {settings.companyName}. All rights reserved.
-          </p>
+           <nav className="flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm">
+            {navLinks.map((link) => (
+                <Link
+                key={link.href}
+                href={link.href}
+                className="text-muted-foreground transition-colors hover:text-foreground"
+                prefetch={false}
+                >
+                {link.label}
+                </Link>
+            ))}
+            <Link href="/privacy" className="text-muted-foreground transition-colors hover:text-foreground">Privacy Policy</Link>
+          </nav>
           <div className="flex justify-center md:justify-end items-center gap-4">
             <Link href={settings.socials.twitter} aria-label="Twitter">
               <Twitter className="h-5 w-5 text-muted-foreground transition-colors hover:text-primary" />
@@ -29,6 +41,9 @@ export default function Footer() {
             </Link>
           </div>
         </div>
+         <p className="text-center text-sm text-muted-foreground mt-8">
+            © {new Date().getFullYear()} {settings.companyName}. All rights reserved.
+          </p>
       </div>
     </footer>
   );
