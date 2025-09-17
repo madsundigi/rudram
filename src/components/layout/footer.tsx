@@ -1,11 +1,19 @@
 
+"use client";
+
 import Link from "next/link";
 import { Mountain, Twitter, Linkedin, Github } from "lucide-react";
 import settings from "@/app/content/settings.json";
 import navLinks from "@/app/content/nav-links.json";
+import { useEffect, useState } from "react";
 
 export default function Footer() {
-  const currentYear = new Date().getFullYear();
+  const [currentYear, setCurrentYear] = useState(new Date().getFullYear());
+
+  useEffect(() => {
+    setCurrentYear(new Date().getFullYear());
+  }, []);
+
   return (
     <footer className="relative bg-background/50 py-12 mt-20 overflow-hidden">
         <div className="absolute inset-0 z-0 opacity-20">
