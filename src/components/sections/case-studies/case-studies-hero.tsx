@@ -28,9 +28,9 @@ function CountUp({ end, duration = 2 }: { end: number; duration?: number }) {
 
     return () => cancelAnimationFrame(animationFrame);
   }, [end, duration, isMounted]);
-  
+
   if (!isMounted) {
-    return null;
+    return <span>{end}</span>;
   }
 
   return <span>{count}</span>;
