@@ -103,7 +103,7 @@ export async function submitHealthCheck(prevState: HealthCheckFormState, formDat
 
     return {
       message: "There was an issue processing your request, but we have saved it. Our team will get in touch shortly.",
-      success: false, 
+      success: true, 
     };
   }
   
