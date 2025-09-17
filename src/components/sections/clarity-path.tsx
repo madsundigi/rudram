@@ -2,6 +2,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Database, AreaChart, Compass } from "lucide-react";
 import clarityPath from "@/app/content/clarity-path.json";
+import { StartJourneyModal } from "../modals/start-journey-modal";
 
 const icons: { [key: string]: React.ReactNode } = {
   "data-health-check": <Database className="h-10 w-10 text-primary" />,
@@ -46,9 +47,11 @@ export default function ClarityPath() {
         </div>
         
         <div className="mt-16 text-center">
-          <Button size="lg" className="btn-glow rounded-full w-48 h-48 text-lg animate-pulse-glow">
-            {clarityPath.cta.text}
-          </Button>
+          <StartJourneyModal>
+            <Button size="lg" className="btn-glow rounded-full w-48 h-48 text-lg animate-pulse-glow">
+              {clarityPath.cta.text}
+            </Button>
+          </StartJourneyModal>
         </div>
       </div>
     </section>

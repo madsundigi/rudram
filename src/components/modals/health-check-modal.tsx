@@ -40,16 +40,22 @@ export function HealthCheckModal({ children, defaultServiceId }: { children: Rea
     const serviceId = useMemo(() => formData.serviceId || defaultServiceId || 'health-check', [formData.serviceId, defaultServiceId]);
 
     const title = useMemo(() => {
-        const serviceCta = ctaContent[serviceId as keyof typeof ctaContent] || ctaContent.book_health_check;
+        const serviceCtaKey = serviceId as keyof typeof ctaContent;
+        const serviceCta = ctaContent[serviceCtaKey] || ctaContent.book_health_check;
         if (step === 3) return "Confirm Your Request";
-        if (step === 2) return "Choose Your Contact Method";
+        if (step === 2) {
+             return serviceId === 'data-apps' ? 'Choose Access Method' : 'Choose Your Contact Method';
+        }
         return serviceCta.title;
     }, [step, serviceId]);
 
     const description = useMemo(() => {
-        const serviceCta = ctaContent[serviceId as keyof typeof ctaContent] || ctaContent.book_health_check;
+        const serviceCtaKey = serviceId as keyof typeof ctaContent;
+        const serviceCta = ctaContent[serviceCtaKey] || ctaContent.book_health_check;
         if (step === 3) return "Please review your details before submitting.";
-        if (step === 2) return "How would you like us to get in touch?";
+        if (step === 2) {
+            return serviceId === 'data-apps' ? "How would you like to access the demo?" : "How would you like us to get in touch?";
+        }
         return serviceCta.description;
     }, [step, serviceId]);
     
@@ -128,7 +134,10 @@ export function HealthCheckModal({ children, defaultServiceId }: { children: Rea
     };
     
     return (
-        <Dialog open={open} onOpenChange={(isOpen) => !isOpen && handleClose()}>
+        <Dialog open={open} onOpenChange={(isOpen) => {
+            if (!isOpen) handleClose();
+            else setOpen(true);
+        }}>
             <DialogTrigger asChild>{children}</DialogTrigger>
             <DialogContent className="sm:max-w-[425px] md:sm:max-w-lg glass-morphic" onInteractOutside={handleClose}>
                 <DialogHeader>
