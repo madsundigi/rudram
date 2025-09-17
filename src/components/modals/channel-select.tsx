@@ -26,7 +26,7 @@ export function ChannelSelect({ formData, onChannelSelect, onBack }: ChannelSele
         \nEmail: ${formData.email}`
     );
     const whatsappUrl = `https://wa.me/${teamContacts.whatsapp}?text=${whatsAppMessage}`;
-    const telUrl = `tel:${teamContacts.phone.replace(/\s/g, '')}`;
+    const telUrl = `tel:+61892884503`;
 
     return (
         <div className="space-y-6">
