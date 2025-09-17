@@ -1,13 +1,14 @@
+
 "use client";
 
-import { useState, useMemo } from 'react';
+import { useState } from 'react';
+import Link from 'next/link';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription, DialogTrigger } from "@/components/ui/dialog";
 import ctaContent from '@/app/content/cta-texts.json';
+import teamContacts from '@/app/content/team-contacts.json';
 import { StartJourneyForm, type StartJourneyFormValues } from './start-journey-form';
-import { ChannelSelect } from './channel-select';
-import { Confirmation } from './confirmation';
-
-export type ContactChannel = "whatsapp" | "call" | "email" | "calendly";
+import { Button } from '../ui/button';
+import { FreeIntroCallModal } from './free-intro-call-modal';
 
 
 export function StartJourneyModal({ children }: { children: React.ReactNode }) {
@@ -52,7 +53,7 @@ export function StartJourneyModal({ children }: { children: React.ReactNode }) {
 
                 {step === 2 && (
                     <div className="space-y-6 text-center">
-                        <h3 className="text-xl font-semibold text-primary-foreground">Thank You!</h3>
+                        <h3 className="text-xl font-semibold">Thank You!</h3>
                         <p className="text-muted-foreground">
                             We've received your request. We'll send your personalized roadmap preview within 48 hours.
                         </p>
@@ -60,12 +61,12 @@ export function StartJourneyModal({ children }: { children: React.ReactNode }) {
                             Want to pick a time to chat now?
                         </p>
                         <div className="flex justify-center gap-4 pt-4">
-                            <a href={`https://calendly.com/rudramdata-info/intro`} target="_blank" rel="noopener noreferrer" className="btn-glow inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-11 rounded-md px-8">
-                                Book Quick Call
-                            </a>
-                             <button onClick={handleClose} className="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-11 rounded-md px-8">
+                            <FreeIntroCallModal>
+                                <Button className="btn-glow">Book Quick Call</Button>
+                            </FreeIntroCallModal>
+                             <Button onClick={handleClose} variant="outline">
                                 Close
-                            </button>
+                            </Button>
                         </div>
                     </div>
                 )}

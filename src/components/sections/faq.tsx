@@ -1,3 +1,4 @@
+
 "use client";
 
 import React from "react";
@@ -10,6 +11,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { Shield, Rocket, Building2, HardDrive, HelpCircle, Bot } from 'lucide-react';
 import faqContent from "@/app/content/faq.json";
+import { FreeIntroCallModal } from "../modals/free-intro-call-modal";
 
 const faqIcons: { [key: string]: React.ReactNode } = {
   "data-volume": <HelpCircle className="h-6 w-6 text-primary" />,
@@ -53,9 +55,11 @@ export default function Faq() {
 
         <div className="mt-20 text-center p-8 rounded-lg glass-morphic border-primary/20">
             <h3 className="text-2xl font-bold mb-4">{faqContent.cta.headline}</h3>
-            <Button size="lg" className="btn-glow px-8 py-6 text-lg">
-                {faqContent.cta.buttonText}
-            </Button>
+            <FreeIntroCallModal>
+                <Button size="lg" className="btn-glow px-8 py-6 text-lg">
+                    {faqContent.cta.buttonText}
+                </Button>
+            </FreeIntroCallModal>
         </div>
       </div>
     </section>

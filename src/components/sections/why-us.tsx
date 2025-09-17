@@ -1,6 +1,8 @@
+
 import { MessageCircle, Settings, TrendingUp, InfinityIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import whyUsContent from "@/app/content/why-us.json";
+import { FreeIntroCallModal } from "../modals/free-intro-call-modal";
 
 const icons: { [key: string]: React.ReactNode } = {
   "simple-first": <MessageCircle className="h-10 w-10 text-primary" />,
@@ -48,10 +50,11 @@ export default function WhyUs() {
           ))}
         </div>
         <div className="mt-20 text-center">
-          <Button size="lg" className="relative btn-glow px-8 py-6 text-lg">
-            <span className="absolute -inset-0.5 rounded-lg bg-gradient-to-r from-primary to-accent opacity-75 blur transition duration-1000 group-hover:opacity-100 group-hover:duration-200 animate-pulse-glow" />
-            <span className="relative">{whyUsContent.cta.text}</span>
-          </Button>
+          <FreeIntroCallModal>
+            <Button size="lg" className="relative btn-glow px-8 py-6 text-lg">
+                <span className="relative">{whyUsContent.cta.text}</span>
+            </Button>
+          </FreeIntroCallModal>
         </div>
       </div>
     </section>
