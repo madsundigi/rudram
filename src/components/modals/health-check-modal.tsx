@@ -63,69 +63,67 @@ export function HealthCheckModal({ children, defaultServiceId }: { children: Rea
     }
     
     const renderContent = () => {
-        switch (serviceId) {
-            case 'data-apps':
-                switch (step) {
-                    case 1:
-                        return (
-                            <LiveDemoForm
-                                onFormSubmit={(data) => {
-                                    setFormData(data);
-                                    setStep(2);
-                                }}
-                                defaultServiceId={serviceId}
-                            />
-                        );
-                    case 2:
-                        return (
-                            <DemoChannelSelect
-                                onChannelSelect={(selectedChannel) => {
-                                    // For now, we just close. Later we can add confirmation.
-                                    handleClose();
-                                }}
-                                onBack={() => setStep(1)}
-                            />
-                        )
-                    default:
-                        return <p>Something went wrong.</p>;
-                }
-            case 'health-check':
-            case 'strategy-advisory':
+        if (serviceId === 'data-apps') {
+            switch (step) {
+                case 1:
+                    return (
+                        <LiveDemoForm
+                            onFormSubmit={(data) => {
+                                setFormData(data);
+                                setStep(2);
+                            }}
+                            defaultServiceId={serviceId}
+                        />
+                    );
+                case 2:
+                    return (
+                        <DemoChannelSelect
+                            onChannelSelect={(selectedChannel) => {
+                                // For now, we just close. Later we can add confirmation.
+                                handleClose();
+                            }}
+                            onBack={() => setStep(1)}
+                        />
+                    )
+                default:
+                    return <p>Something went wrong.</p>;
+            }
+        }
+        
+        // Default flow for 'health-check', 'strategy-advisory', etc.
+        switch (step) {
+            case 1:
+                return (
+                     <HealthCheckForm
+                        defaultServiceId={serviceId}
+                        onFormSubmit={(data) => {
+                            setFormData(data);
+                            setStep(2);
+                        }}
+                    />
+                );
+            case 2:
+                return (
+                    <ChannelSelect
+                        formData={formData}
+                        onChannelSelect={(selectedChannel) => {
+                            setChannel(selectedChannel);
+                            setStep(3);
+                        }}
+                        onBack={() => setStep(1)}
+                    />
+                );
+            case 3:
+                return (
+                    <Confirmation
+                        formData={formData as FormData}
+                        channel={channel!}
+                        onBack={() => setStep(2)}
+                        onClose={handleClose}
+                    />
+                )
             default:
-                switch (step) {
-                    case 1:
-                        return (
-                             <HealthCheckForm
-                                defaultServiceId={serviceId}
-                                onFormSubmit={(data) => {
-                                    setFormData(data);
-                                    setStep(2);
-                                }}
-                            />
-                        );
-                    case 2:
-                        return (
-                            <ChannelSelect
-                                formData={formData}
-                                onChannelSelect={(selectedChannel) => {
-                                    setChannel(selectedChannel);
-                                    setStep(3);
-                                }}
-                                onBack={() => setStep(1)}
-                            />
-                        );
-                    case 3:
-                        return (
-                            <Confirmation
-                                formData={formData as FormData}
-                                channel={channel!}
-                                onBack={() => setStep(2)}
-                                onClose={handleClose}
-                            />
-                        )
-                    default:
-                        return <p>Something went wrong.</p>;
-                }
+                return <p>Something went wrong.</p>;
         }
     };
     
