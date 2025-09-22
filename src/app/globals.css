@@ -13,8 +13,8 @@
     --popover: 180 56% 95%;
     --popover-foreground: 224 71% 4%;
 
-    --primary: 45 100% 45%;
-    --primary-foreground: 45 100% 5%;
+    --primary: 45 95% 51%;
+    --primary-foreground: 45 95% 11%;
 
     --secondary: 215 28% 93%;
     --secondary-foreground: 224 71% 4%;
@@ -22,15 +22,15 @@
     --muted: 215 28% 93%;
     --muted-foreground: 215 20% 55%;
 
-    --accent: 45 100% 40%;
-    --accent-foreground: 45 100% 5%;
+    --accent: 45 95% 46%;
+    --accent-foreground: 45 95% 11%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
 
     --border: 215 28% 87%;
     --input: 215 28% 87%;
-    --ring: 45 100% 50%;
+    --ring: 45 95% 51%;
 
     --radius: 0.5rem;
 
@@ -51,8 +51,8 @@
     --popover: 224 71% 4%;
     --popover-foreground: 45 15% 95%;
 
-    --primary: 45 100% 50%;
-    --primary-foreground: 45 100% 10%;
+    --primary: 45 95% 51%;
+    --primary-foreground: 45 95% 11%;
 
     --secondary: 215 28% 15%;
     --secondary-foreground: 45 15% 95%;
@@ -60,15 +60,15 @@
     --muted: 215 28% 15%;
     --muted-foreground: 215 20% 65%;
 
-    --accent: 45 100% 55%;
-    --accent-foreground: 45 100% 10%;
+    --accent: 45 95% 56%;
+    --accent-foreground: 45 95% 11%;
 
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
 
     --border: 215 28% 20%;
     --input: 215 28% 20%;
-    --ring: 45 100% 50%;
+    --ring: 45 95% 51%;
 
     --chart-1: 45 70% 50%;
     --chart-2: 50 60% 45%;
@@ -101,7 +101,7 @@
   }
 
   .card-glow {
-    @apply transition-all duration-300 shadow-[0_0_15px_hsl(var(--primary)/0.3)];
+    @apply shadow-[0_0_15px_hsl(var(--primary)/0.3)];
   }
   .card-glow:hover {
     transform: translateY(-4px) scale(1.02);
