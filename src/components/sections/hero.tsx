@@ -11,13 +11,16 @@ import {
   type CarouselApi,
 } from "@/components/ui/carousel";
 import { Button } from "@/components/ui/button";
-import { PlaceHolderImages } from "@/lib/placeholder-images";
 import heroContent from "@/app/content/hero.json";
 import { HealthCheckModal } from "@/components/modals/health-check-modal";
 import { StartJourneyModal } from "@/components/modals/start-journey-modal";
 import { cn } from "@/lib/utils";
 
-const heroImages = PlaceHolderImages.filter(img => img.id.startsWith('hero-'));
+const heroImages = [
+  { id: 's1', imageUrl: '/images/s1.jpg', description: 'Slider image 1', imageHint: 'data analytics' },
+  { id: 's2', imageUrl: '/images/s2.jpg', description: 'Slider image 2', imageHint: 'business team' },
+  { id: 's3', imageUrl: '/images/s3.jpg', description: 'Slider image 3', imageHint: 'data abstract' },
+];
 
 export default function HeroSection() {
   const [api, setApi] = useState<CarouselApi>();
@@ -113,7 +116,7 @@ export default function HeroSection() {
             style={{ animationDelay: '0.8s', animationFillMode: 'backwards' }}
           >
             <HealthCheckModal defaultServiceId="health-check">
-              <Button size="lg" className="btn-glow text-lg px-6 py-6 bg-gradient-to-r from-teal-400 to-cyan-500 hover:from-teal-500 hover:to-cyan-600 border border-teal-300/50 text-white">
+              <Button size="lg" className={cn("btn-glow text-lg py-6 bg-gradient-to-r from-teal-400 to-cyan-500 hover:from-teal-500 hover:to-cyan-600 border border-teal-300/50 text-white", (currentSlideContent?.cta.primary.text || "").length > 25 ? 'px-4' : 'px-6')}>
                 {currentSlideContent?.cta.primary.text || "Book a Data Health Check"}
               </Button>
             </HealthCheckModal>
