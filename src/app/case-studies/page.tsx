@@ -2,7 +2,6 @@ import CaseStudiesHero from "@/components/sections/case-studies/case-studies-her
 import FeaturedStory from "@/components/sections/case-studies/featured-story";
 import StoryGrid from "@/components/sections/case-studies/story-grid";
 import RoiVisual from "@/components/sections/case-studies/roi-visual";
-import TestimonialCarousel from "@/components/sections/case-studies/testimonial-carousel";
 import CtaBanner from "@/components/sections/shared/cta-banner";
 
 export default function CaseStudiesPage() {
@@ -20,7 +19,6 @@ export default function CaseStudiesPage() {
         <FeaturedStory />
         <StoryGrid />
         <RoiVisual />
-        <TestimonialCarousel />
         <CtaBanner />
       </div>
     </div>

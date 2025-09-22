@@ -3,6 +3,7 @@ import ClarityPath from "@/components/sections/clarity-path";
 import WhyUs from "@/components/sections/why-us";
 import Faq from "@/components/sections/faq";
 import CaseStories from "@/components/sections/home/case-stories";
+import TestimonialCarousel from "@/components/sections/case-studies/testimonial-carousel";
 
 export default function Home() {
   return (
@@ -18,6 +19,7 @@ export default function Home() {
         </div>
         <ClarityPath />
         <CaseStories />
+        <TestimonialCarousel />
         <WhyUs />
         <Faq />
       </div>
