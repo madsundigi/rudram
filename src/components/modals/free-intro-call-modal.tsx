@@ -28,18 +28,20 @@ export function FreeIntroCallModal({ children }: { children: React.ReactNode }) 
                     <DialogTitle className="text-2xl text-primary text-glow">{ctaContent.free_intro.title}</DialogTitle>
                     <DialogDescription>{ctaContent.free_intro.description}</DialogDescription>
                 </DialogHeader>
-                <ScrollArea className="px-6 flex-grow">
-                    <div className="flex flex-col items-center justify-center gap-4 py-4">
-                        <Link href={teamContacts.introCallCalendarLink} target="_blank" rel="noopener noreferrer" className="w-full">
-                            <Button size="lg" className="w-full btn-glow">
-                                Book 30-Min Call
+                <div className="flex-grow overflow-y-auto px-6">
+                    <ScrollArea className="h-full">
+                        <div className="flex flex-col items-center justify-center gap-4 py-4">
+                            <Link href={teamContacts.introCallCalendarLink} target="_blank" rel="noopener noreferrer" className="w-full">
+                                <Button size="lg" className="w-full btn-glow">
+                                    Book 30-Min Call
+                                </Button>
+                            </Link>
+                            <Button size="lg" variant="outline" onClick={handleClose} className="w-full">
+                                Close
                             </Button>
-                        </Link>
-                        <Button size="lg" variant="outline" onClick={handleClose} className="w-full">
-                            Close
-                        </Button>
-                    </div>
-                </ScrollArea>
+                        </div>
+                    </ScrollArea>
+                </div>
             </DialogContent>
         </Dialog>
     );

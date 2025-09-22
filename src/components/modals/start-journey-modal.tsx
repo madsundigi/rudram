@@ -43,36 +43,38 @@ export function StartJourneyModal({ children }: { children: React.ReactNode }) {
                     <DialogDescription>{description}</DialogDescription>
                 </DialogHeader>
                 
-                <ScrollArea className="flex-grow px-6">
-                    <div className="pb-6">
-                        {step === 1 && (
-                            <StartJourneyForm
-                                onFormSubmit={handleFormSubmit}
-                                onCancel={handleClose}
-                            />
-                        )}
+                <div className="flex-grow overflow-y-auto">
+                    <ScrollArea className="h-full px-6">
+                        <div className="py-6">
+                            {step === 1 && (
+                                <StartJourneyForm
+                                    onFormSubmit={handleFormSubmit}
+                                    onCancel={handleClose}
+                                />
+                            )}
 
-                        {step === 2 && (
-                            <div className="space-y-6 text-center py-8">
-                                <h3 className="text-xl font-semibold">Thank You!</h3>
-                                <p className="text-muted-foreground">
-                                    We've received your request. We'll send your personalized roadmap preview within 48 hours.
-                                </p>
-                                <p className="text-muted-foreground">
-                                    Want to pick a time to chat now?
-                                </p>
-                                <div className="flex justify-center gap-4 pt-4">
-                                    <FreeIntroCallModal>
-                                        <Button className="btn-glow">Book Quick Call</Button>
-                                    </FreeIntroCallModal>
-                                     <Button onClick={handleClose} variant="outline">
-                                        Close
-                                    </Button>
+                            {step === 2 && (
+                                <div className="space-y-6 text-center py-8">
+                                    <h3 className="text-xl font-semibold">Thank You!</h3>
+                                    <p className="text-muted-foreground">
+                                        We've received your request. We'll send your personalized roadmap preview within 48 hours.
+                                    </p>
+                                    <p className="text-muted-foreground">
+                                        Want to pick a time to chat now?
+                                    </p>
+                                    <div className="flex justify-center gap-4 pt-4">
+                                        <FreeIntroCallModal>
+                                            <Button className="btn-glow">Book Quick Call</Button>
+                                        </FreeIntroCallModal>
+                                         <Button onClick={handleClose} variant="outline">
+                                            Close
+                                        </Button>
+                                    </div>
                                 </div>
-                            </div>
-                        )}
-                    </div>
-                </ScrollArea>
+                            )}
+                        </div>
+                    </ScrollArea>
+                </div>
             </DialogContent>
         </Dialog>
     );
