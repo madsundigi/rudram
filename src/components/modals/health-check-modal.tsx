@@ -9,6 +9,7 @@ import { ChannelSelect } from './channel-select';
 import { Confirmation } from './confirmation';
 import { LiveDemoForm } from './live-demo-form';
 import { DemoChannelSelect } from './demo-channel-select';
+import { ScrollArea } from '../ui/scroll-area';
 
 export type Service = {
     id: string;
@@ -144,9 +145,11 @@ export function HealthCheckModal({ children, defaultServiceId }: { children: Rea
                     <DialogTitle className="text-2xl text-primary text-glow">{title}</DialogTitle>
                     <DialogDescription>{description}</DialogDescription>
                 </DialogHeader>
-                <div className="flex-grow overflow-y-auto -mr-6 pr-6">
-                    {renderContent()}
-                </div>
+                <ScrollArea className="flex-grow pr-6 -mr-6">
+                   <div className="h-full">
+                       {renderContent()}
+                   </div>
+                </ScrollArea>
             </DialogContent>
         </Dialog>
     );

@@ -9,6 +9,7 @@ import teamContacts from '@/app/content/team-contacts.json';
 import { StartJourneyForm, type StartJourneyFormValues } from './start-journey-form';
 import { Button } from '../ui/button';
 import { FreeIntroCallModal } from './free-intro-call-modal';
+import { ScrollArea } from '../ui/scroll-area';
 
 
 export function StartJourneyModal({ children }: { children: React.ReactNode }) {
@@ -44,7 +45,7 @@ export function StartJourneyModal({ children }: { children: React.ReactNode }) {
                     <DialogDescription>{description}</DialogDescription>
                 </DialogHeader>
                 
-                <div className="flex-grow overflow-y-auto -mr-6 pr-6">
+                <ScrollArea className="flex-grow pr-6 -mr-6">
                     {step === 1 && (
                         <StartJourneyForm
                             onFormSubmit={handleFormSubmit}
@@ -71,7 +72,7 @@ export function StartJourneyModal({ children }: { children: React.ReactNode }) {
                             </div>
                         </div>
                     )}
-                </div>
+                </ScrollArea>
             </DialogContent>
         </Dialog>
     );
