@@ -77,7 +77,7 @@ export default function TestimonialCarousel() {
                     </Button>
                 </HealthCheckModal>
                 <StartJourneyModal>
-                    <Button size="lg" variant="outline" className="text-lg px-8 py-6 glass-morphic border-white/50 hover:border-white text-white hover:bg-white/10">
+                    <Button size="lg" variant="outline" className="text-lg px-8 py-6 glass-morphic border-white/50 hover:border-white text-white hover:bg-white/20 hover:text-black">
                         {cta.secondaryCta.text}
                     </Button>
                 </StartJourneyModal>
