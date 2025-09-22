@@ -1,9 +1,11 @@
+
 import HeroSection from "@/components/sections/hero";
 import ClarityPath from "@/components/sections/clarity-path";
 import WhyUs from "@/components/sections/why-us";
 import Faq from "@/components/sections/faq";
 import CaseStories from "@/components/sections/home/case-stories";
 import TestimonialCarousel from "@/components/sections/case-studies/testimonial-carousel";
+import CloudPartners from "@/components/sections/home/cloud-partners";
 
 export default function Home() {
   return (
@@ -21,6 +23,7 @@ export default function Home() {
         <CaseStories />
         <TestimonialCarousel />
         <WhyUs />
+        <CloudPartners />
         <Faq />
       </div>
     </div>
