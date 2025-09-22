@@ -8,8 +8,6 @@ import {
   Carousel,
   CarouselContent,
   CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
   type CarouselApi,
 } from "@/components/ui/carousel";
 import { Button } from "@/components/ui/button";
@@ -123,8 +121,6 @@ export default function HeroSection() {
             </StartJourneyModal>
           </div>
         </div>
-         <CarouselPrevious className="absolute left-4 top-1/2 -translate-y-1/2 z-20 glass-morphic border-primary/50 hover:bg-primary/20" />
-         <CarouselNext className="absolute right-4 top-1/2 -translate-y-1/2 z-20 glass-morphic border-primary/50 hover:bg-primary/20" />
       </Carousel>
     </section>
   );
