@@ -16,12 +16,6 @@ import { HealthCheckModal } from "@/components/modals/health-check-modal";
 import { StartJourneyModal } from "@/components/modals/start-journey-modal";
 import { cn } from "@/lib/utils";
 
-const heroImages = [
-  { id: 's1', imageUrl: '/images/s1.jpg', description: 'Slider image 1', imageHint: 'data analytics' },
-  { id: 's2', imageUrl: '/images/s2.jpg', description: 'Slider image 2', imageHint: 'business team' },
-  { id: 's3', imageUrl: '/images/s3.jpg', description: 'Slider image 3', imageHint: 'data abstract' },
-];
-
 export default function HeroSection() {
   const [api, setApi] = useState<CarouselApi>();
   const [current, setCurrent] = useState(0);
@@ -51,7 +45,6 @@ export default function HeroSection() {
   const slides = heroContent.slides;
   const currentSlideContent = slides[current % slides.length];
 
-
   return (
     <section className="relative w-full h-screen flex items-center justify-center text-center overflow-hidden">
       <Carousel
@@ -64,15 +57,15 @@ export default function HeroSection() {
       >
         <div className="absolute inset-0 w-full h-full z-0">
             <CarouselContent className="h-full" effect="fade">
-                {heroImages.map((image, index) => (
+                {slides.map((slide, index) => (
                 <CarouselItem key={index} className="h-full">
                     <div className="w-full h-full relative overflow-hidden">
                     <Image
-                        src={image.imageUrl}
-                        alt={image.description}
+                        src={slide.imageUrl}
+                        alt={slide.imageDescription}
                         fill
                         className="object-cover animate-zoom"
-                        data-ai-hint={image.imageHint}
+                        data-ai-hint={slide.imageHint}
                         priority={index === 0}
                     />
                     </div>
