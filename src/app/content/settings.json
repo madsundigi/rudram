@@ -2,14 +2,16 @@
 {
   "appName": "Rudram",
   "companyName": "Rudram Data Solutions",
+  "tagline": "Delivering game-changing end-to-end data solutions and enabling your business transformation through artificial intelligence.",
   "contact": {
-    "email": "contact@rudram.dev",
-    "phone": "+1 (555) 123-4567"
+    "email": "info@rudramdata.com",
+    "phone": "+61 892884503"
   },
   "socials": {
     "twitter": "#",
     "linkedin": "#",
-    "github": "#"
+    "github": "#",
+    "youtube": "#"
   },
   "cta": {
     "primary": {
