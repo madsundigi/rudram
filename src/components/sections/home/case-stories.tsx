@@ -15,6 +15,7 @@ const icons: { [key: string]: React.ReactNode } = {
 
 export default function CaseStories() {
   const { stories, pageTitle } = content;
+  const storiesToShow = stories.slice(0, 3);
 
   return (
     <section id="case-stories" className="w-full py-20 lg:py-32">
@@ -29,7 +30,7 @@ export default function CaseStories() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {stories.map((story) => (
+          {storiesToShow.map((story) => (
             <Link key={story.slug} href={`/case-studies/${story.slug}`} passHref>
               <Card className="glass-morphic card-glow border-primary/20 flex flex-col h-full cursor-pointer group">
                 <CardContent className="p-6 flex-grow flex flex-col justify-between">
