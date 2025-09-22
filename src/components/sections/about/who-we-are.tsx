@@ -30,7 +30,7 @@ export default function WhoWeAre() {
                       alt={member.image.alt}
                       width={400}
                       height={400}
-                      className="rounded-lg object-cover w-full h-full"
+                      className="rounded-lg object-cover object-top w-full h-full"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent rounded-2xl" />
                   </div>
