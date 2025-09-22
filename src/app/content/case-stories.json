@@ -32,15 +32,15 @@
     {
       "slug": "manufacturing-pilot",
       "title": "Manufacturing Pilot",
-      "description": "Found AUD 600,000/year in hidden material leakage costs during our 2-week Health Check.",
-      "content": "A mid-sized manufacturing client was struggling with inventory management. They knew there were inefficiencies but couldn't pinpoint them in their scattered data.\n\nOur Data Health Check connected their procurement, production, and waste management systems. We deployed a unified data model to track material flow from entry to exit.\n\nWithin two weeks, we identified a consistent material leakage issue in one of their production lines, amounting to nearly AUD 600,000 in annual losses. We built a simple, real-time dashboard to monitor this variance, allowing them to fix the process and prevent future losses.",
+      "description": "Found $AUD 600,000/year in hidden material leakage costs during our 2-week Health Check.",
+      "content": "A mid-sized manufacturing client was struggling with inventory management. They knew there were inefficiencies but couldn't pinpoint them in their scattered data.\n\nOur Data Health Check connected their procurement, production, and waste management systems. We deployed a unified data model to track material flow from entry to exit.\n\nWithin two weeks, we identified a consistent material leakage issue in one of their production lines, amounting to nearly $AUD 600,000 in annual losses. We built a simple, real-time dashboard to monitor this variance, allowing them to fix the process and prevent future losses.",
       "image": "https://picsum.photos/seed/case1/1200/600",
       "visual": {
         "type": "graph",
         "icon": "TrendingUp",
         "data": {
           "title": "Annual Savings",
-          "metric": "AUD 600,000"
+          "metric": "$AUD 600,000"
         }
       }
     },
