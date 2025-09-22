@@ -13,7 +13,7 @@
           "role": "CEO & Co-Founder",
           "bio": "Expert in transforming complex data into actionable business strategy.",
           "image": {
-            "src": "https://picsum.photos/seed/shivam/400/400",
+            "src": "/images/shivam.jpg",
             "alt": "Portrait of Shivam Maria"
           },
           "linkedinUrl": "https://www.linkedin.com/company/rudram-data-solutions/"
@@ -23,7 +23,7 @@
           "role": "CTO & Co-Founder",
           "bio": "Specializes in building robust, scalable data infrastructure from the ground up.",
           "image": {
-            "src": "https://picsum.photos/seed/parav/400/400",
+            "src": "/images/Parav.jpg",
             "alt": "Portrait of Parav Pathak"
           },
           "linkedinUrl": "https://www.linkedin.com/company/rudram-data-solutions/"
