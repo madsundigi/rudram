@@ -2,6 +2,7 @@ import HeroSection from "@/components/sections/hero";
 import ClarityPath from "@/components/sections/clarity-path";
 import WhyUs from "@/components/sections/why-us";
 import Faq from "@/components/sections/faq";
+import CaseStories from "@/components/sections/home/case-stories";
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
           ></div>
         </div>
         <ClarityPath />
+        <CaseStories />
         <WhyUs />
         <Faq />
       </div>

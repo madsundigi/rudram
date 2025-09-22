@@ -30,8 +30,11 @@
   },
   "stories": [
     {
+      "slug": "manufacturing-pilot",
       "title": "Manufacturing Pilot",
       "description": "Found ₹6 lakh/year in hidden material leakage costs during our 2-week Health Check.",
+      "content": "A mid-sized manufacturing client was struggling with inventory management. They knew there were inefficiencies but couldn't pinpoint them. Our Data Health Check connected their procurement, production, and waste management systems. Within two weeks, we identified a consistent material leakage issue in one of their production lines, amounting to nearly ₹6 lakh in annual losses. We built a simple dashboard to monitor this in real-time, allowing them to fix the issue and prevent future losses.",
+      "image": "https://picsum.photos/seed/case1/1200/600",
       "visual": {
         "type": "graph",
         "icon": "TrendingUp",
@@ -42,8 +45,11 @@
       }
     },
     {
+      "slug": "real-estate-crm",
       "title": "Real Estate CRM",
       "description": "Cleaned & restructured 50k+ contacts for a fully automated marketing pipeline.",
+      "content": "A real estate agency had over 50,000 contacts in a messy CRM, making targeted marketing impossible. We undertook a massive data cleaning and restructuring project. We standardized formats, removed duplicates, and enriched the data with property preferences and engagement history. The result was a clean, segmented database that powered a new automated marketing pipeline, increasing lead qualification rates by 40%.",
+      "image": "https://picsum.photos/seed/case2/1200/600",
       "visual": {
         "type": "flowchart",
         "icon": "Users",
@@ -54,8 +60,11 @@
       }
     },
     {
+      "slug": "sme-finance-team",
       "title": "SME Finance Team",
       "description": "Replaced 20+ spreadsheets with one simple, powerful Data App.",
+      "content": "The finance team at a growing SME was drowning in over 20 different spreadsheets for financial reporting. The process was manual, error-prone, and took days each month. We developed a centralized Data App that connected directly to their accounting software. It automated all their standard reports—P&L, cash flow, and departmental budgets—into a single, interactive dashboard. This reduced their monthly reporting time by 90% and eliminated manual data entry errors.",
+      "image": "https://picsum.photos/seed/case3/1200/600",
       "visual": {
         "type": "graph",
         "icon": "PieChart",
