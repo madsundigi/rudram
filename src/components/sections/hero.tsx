@@ -24,7 +24,7 @@ export default function HeroSection() {
   const [current, setCurrent] = useState(0);
 
   const plugin = useRef(
-      Autoplay({ delay: 2000, stopOnInteraction: true })
+      Autoplay({ delay: 5000, stopOnInteraction: true })
   );
 
   useEffect(() => {
