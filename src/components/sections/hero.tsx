@@ -25,11 +25,6 @@ const heroImages = [
 export default function HeroSection() {
   const [api, setApi] = useState<CarouselApi>();
   const [current, setCurrent] = useState(0);
-  const [timestamp, setTimestamp] = useState('');
-
-  useEffect(() => {
-    setTimestamp(new Date().getTime().toString());
-  }, []);
 
   const plugin = useRef(
       Autoplay({ delay: 5000, stopOnInteraction: true })
@@ -72,14 +67,14 @@ export default function HeroSection() {
                 {heroImages.map((image, index) => (
                 <CarouselItem key={index} className="h-full">
                     <div className="w-full h-full relative overflow-hidden">
-                    {timestamp && <Image
-                        src={`${image.imageUrl}?t=${timestamp}`}
+                    <Image
+                        src={image.imageUrl}
                         alt={image.description}
                         fill
                         className="object-cover animate-zoom"
                         data-ai-hint={image.imageHint}
                         priority={index === 0}
-                    />}
+                    />
                     </div>
                 </CarouselItem>
                 ))}
