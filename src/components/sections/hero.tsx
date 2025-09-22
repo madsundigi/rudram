@@ -50,7 +50,7 @@ export default function HeroSection() {
 
 
   return (
-    <section className="relative w-full h-screen flex items-end justify-center text-center overflow-hidden pb-24 md:pb-32">
+    <section className="relative w-full h-screen flex items-center justify-center text-center overflow-hidden">
       <Carousel
         setApi={setApi}
         plugins={[plugin.current]}
