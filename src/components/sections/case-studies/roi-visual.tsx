@@ -69,24 +69,6 @@ export default function RoiVisual() {
             </CardContent>
           </Card>
         </div>
-
-        <div className="mt-8">
-          <Card className="glass-morphic border-primary/20 card-glow">
-            <CardHeader>
-              <CardTitle className="text-primary text-lg text-center">{roiSection.charts.timeSaved.title}</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <ResponsiveContainer width="100%" height={300}>
-                <BarChart data={roiSection.charts.timeSaved.data} layout="vertical" margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
-                  <XAxis type="number" stroke="hsl(var(--muted-foreground))" fontSize={12} />
-                  <YAxis type="category" dataKey="client" stroke="hsl(var(--muted-foreground))" fontSize={12} width={80} />
-                  <Tooltip content={<CustomTooltip />} cursor={{ fill: 'hsl(var(--primary)/0.1)' }} />
-                  <Bar dataKey="value" fill="hsl(var(--accent))" radius={[0, 4, 4, 0]} background={{ fill: 'hsl(var(--muted)/0.2)' }}/>
-                </BarChart>
-              </ResponsiveContainer>
-            </CardContent>
-          </Card>
-        </div>
       </div>
     </section>
   );
