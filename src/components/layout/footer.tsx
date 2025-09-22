@@ -2,7 +2,8 @@
 "use client";
 
 import Link from "next/link";
-import { Mountain, Twitter, Linkedin, Github } from "lucide-react";
+import Image from "next/image";
+import { Twitter, Linkedin, Github } from "lucide-react";
 import settings from "@/app/content/settings.json";
 import navLinks from "@/app/content/nav-links.json";
 import { useEffect, useState } from "react";
@@ -22,7 +23,7 @@ export default function Footer() {
       <div className="container mx-auto px-4 md:px-6 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
           <div className="flex items-center gap-2 justify-center md:justify-start">
-            <Mountain className="h-6 w-6 text-primary" />
+            <Image src="/logo.png" alt={`${settings.appName} logo`} width={24} height={24} />
             <span className="text-xl font-bold text-foreground">{settings.appName}</span>
           </div>
            <nav className="flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm">

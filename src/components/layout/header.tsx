@@ -1,8 +1,9 @@
 
 import Link from "next/link";
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { Menu, Mountain } from "lucide-react";
+import { Menu } from "lucide-react";
 import settings from "@/app/content/settings.json";
 import navLinks from "@/app/content/nav-links.json";
 import { HealthCheckModal } from "@/components/modals/health-check-modal";
@@ -13,7 +14,7 @@ export default function Header() {
     <header className="sticky top-0 z-50 w-full glass-morphic">
       <div className="container mx-auto flex h-20 items-center justify-between px-4 md:px-6">
         <Link href="/" className="flex items-center gap-2" prefetch={false}>
-          <Mountain className="h-6 w-6 text-primary" />
+          <Image src="/logo.png" alt={`${settings.appName} logo`} width={36} height={36} />
           <span className="text-xl font-bold text-foreground">{settings.appName}</span>
         </Link>
         <nav className="hidden items-center gap-6 md:flex">
@@ -51,7 +52,7 @@ export default function Header() {
                   className="flex items-center gap-2 text-lg font-semibold"
                   prefetch={false}
                 >
-                  <Mountain className="h-6 w-6 text-primary" />
+                  <Image src="/logo.png" alt={`${settings.appName} logo`} width={36} height={36} />
                   <span className="sr-only">{settings.appName}</span>
                 </Link>
                 {navLinks.map((link) => (
