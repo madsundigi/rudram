@@ -15,6 +15,7 @@ import heroContent from "@/app/content/hero.json";
 import { HealthCheckModal } from "@/components/modals/health-check-modal";
 import { StartJourneyModal } from "@/components/modals/start-journey-modal";
 import { cn } from "@/lib/utils";
+import Link from "next/link";
 
 export default function HeroSection() {
   const [api, setApi] = useState<CarouselApi>();
@@ -44,6 +45,26 @@ export default function HeroSection() {
 
   const slides = heroContent.slides;
   const currentSlideContent = slides[current % slides.length];
+
+  const SecondaryButton = () => {
+    if (currentSlideContent.id === 'clarity') {
+      return (
+        <Link href="#path">
+          <Button size="lg" variant="outline" className="text-lg px-8 py-6 glass-morphic border-white/50 hover:border-white text-white hover:bg-black/80 hover:text-white">
+            {currentSlideContent?.cta.secondary.text || "See How It Works"}
+          </Button>
+        </Link>
+      );
+    }
+
+    return (
+      <StartJourneyModal>
+        <Button size="lg" variant="outline" className="text-lg px-8 py-6 glass-morphic border-white/50 hover:border-white text-white hover:bg-black/80 hover:text-white">
+          {currentSlideContent?.cta.secondary.text || "See How It Works"}
+        </Button>
+      </StartJourneyModal>
+    );
+  };
 
   return (
     <section className="relative w-full h-screen flex items-center justify-center text-center overflow-hidden">
@@ -111,11 +132,7 @@ export default function HeroSection() {
                 {currentSlideContent?.cta.primary.text || "Book a Data Health Check"}
               </Button>
             </HealthCheckModal>
-            <StartJourneyModal>
-              <Button size="lg" variant="outline" className="text-lg px-8 py-6 glass-morphic border-white/50 hover:border-white text-white hover:bg-white/20 hover:text-black">
-                {currentSlideContent?.cta.secondary.text || "See How It Works"}
-              </Button>
-            </StartJourneyModal>
+            <SecondaryButton />
           </div>
         </div>
     </section>
