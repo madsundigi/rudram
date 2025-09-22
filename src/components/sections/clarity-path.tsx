@@ -49,7 +49,7 @@ export default function ClarityPath() {
         
         <div className="mt-16 text-center">
           <StartJourneyModal>
-            <Button size="lg" className="btn-glow rounded-full w-48 h-48 text-lg flex items-center justify-center animate-pulse-glow">
+            <Button size="lg" className="btn-glow rounded-full w-48 h-48 text-lg flex items-center justify-center animate-pulse-glow mx-auto">
               {clarityPath.cta.text}
             </Button>
           </StartJourneyModal>
