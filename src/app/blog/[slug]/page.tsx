@@ -104,7 +104,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
                     {blogContent.postCta.headline}
                 </h2>
                 <HealthCheckModal defaultServiceId="data-apps">
-                    <Button size="lg" className="btn-glow text-lg px-8 py-6 bg-gradient-to-r from-teal-400 to-cyan-500 hover:from-teal-500 hover:to-cyan-600 border border-teal-300/50 text-white animate-pulse-glow">
+                    <Button size="lg" className="btn-glow text-lg px-8 py-6 animate-pulse-glow">
                         {blogContent.postCta.ctaText}
                     </Button>
                 </HealthCheckModal>

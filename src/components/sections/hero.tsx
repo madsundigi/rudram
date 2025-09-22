@@ -107,7 +107,7 @@ export default function HeroSection() {
             style={{ animationDelay: '0.8s', animationFillMode: 'backwards' }}
           >
             <HealthCheckModal defaultServiceId="health-check">
-              <Button size="lg" className={cn("btn-glow text-lg py-6 bg-gradient-to-r from-teal-400 to-cyan-500 hover:from-teal-500 hover:to-cyan-600 border border-teal-300/50 text-white", (currentSlideContent?.cta.primary.text || "").length > 25 ? 'px-4' : 'px-6')}>
+              <Button size="lg" className={cn("btn-glow text-lg py-6", (currentSlideContent?.cta.primary.text || "").length > 25 ? 'px-4' : 'px-6')}>
                 {currentSlideContent?.cta.primary.text || "Book a Data Health Check"}
               </Button>
             </HealthCheckModal>
