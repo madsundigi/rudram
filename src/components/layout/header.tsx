@@ -10,12 +10,11 @@ import { HealthCheckModal } from "@/components/modals/health-check-modal";
 
 
 export default function Header() {
-  const logoSrc = `/images/Logo.png?t=${new Date().getTime()}`;
   return (
     <header className="sticky top-0 z-50 w-full glass-morphic">
       <div className="container mx-auto flex h-20 items-center justify-between px-4 md:px-6">
         <Link href="/" className="flex items-center gap-2" prefetch={false}>
-          <Image src={logoSrc} alt={`${settings.appName} logo`} width={36} height={36} />
+          <Image src="/images/Logo.png" alt={`${settings.appName} logo`} width={36} height={36} />
           <span className="text-xl font-bold text-foreground">{settings.appName}</span>
         </Link>
         <nav className="hidden items-center gap-6 md:flex">
@@ -53,7 +52,7 @@ export default function Header() {
                   className="flex items-center gap-2 text-lg font-semibold"
                   prefetch={false}
                 >
-                  <Image src={logoSrc} alt={`${settings.appName} logo`} width={36} height={36} />
+                  <Image src="/images/Logo.png" alt={`${settings.appName} logo`} width={36} height={36} />
                   <span className="sr-only">{settings.appName}</span>
                 </Link>
                 {navLinks.map((link) => (
