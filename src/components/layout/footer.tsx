@@ -134,12 +134,6 @@ export default function Footer() {
                 <Link href={settings.socials.linkedin} aria-label="LinkedIn" className="group">
                 <Linkedin className="h-6 w-6 text-muted-foreground transition-all duration-300 group-hover:text-primary group-hover:scale-125 group-hover:animate-pulse" />
                 </Link>
-                <Link href={settings.socials.twitter} aria-label="Twitter" className="group">
-                <Twitter className="h-6 w-6 text-muted-foreground transition-all duration-300 group-hover:text-primary group-hover:scale-125 group-hover:animate-pulse" />
-                </Link>
-                <Link href={settings.socials.youtube} aria-label="YouTube" className="group">
-                <Youtube className="h-6 w-6 text-muted-foreground transition-all duration-300 group-hover:text-primary group-hover:scale-125 group-hover:animate-pulse" />
-                </Link>
             </div>
         </div>
       </div>
