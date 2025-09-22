@@ -19,7 +19,7 @@ export default function WhoWeAre() {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-12 lg:gap-24 items-center max-w-5xl mx-auto">
+        <div className="grid md:grid-cols-2 gap-12 lg:gap-24 items-start max-w-5xl mx-auto">
           {whoWeAre.founders.map((member) => (
             <div key={member.name} className="flex flex-col items-center text-center">
               <div className="relative w-full max-w-xs mx-auto aspect-square [perspective:1500px] mb-6">
