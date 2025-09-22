@@ -43,8 +43,8 @@ export function StartJourneyModal({ children }: { children: React.ReactNode }) {
                     <DialogDescription>{description}</DialogDescription>
                 </DialogHeader>
                 
-                <div className="flex-grow overflow-y-auto">
-                    <ScrollArea className="h-full px-6">
+                <div className="flex-grow overflow-y-auto px-6">
+                    <ScrollArea className="h-full">
                         <div className="py-6">
                             {step === 1 && (
                                 <StartJourneyForm

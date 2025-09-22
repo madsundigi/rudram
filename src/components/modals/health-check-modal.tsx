@@ -145,8 +145,8 @@ export function HealthCheckModal({ children, defaultServiceId }: { children: Rea
                     <DialogTitle className="text-2xl text-primary text-glow">{title}</DialogTitle>
                     <DialogDescription>{description}</DialogDescription>
                 </DialogHeader>
-                <div className="flex-grow overflow-y-auto">
-                    <ScrollArea className="h-full px-6">
+                <div className="flex-grow overflow-y-auto px-6">
+                    <ScrollArea className="h-full">
                        <div className="py-6">
                            {renderContent()}
                        </div>
