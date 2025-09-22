@@ -141,12 +141,12 @@ export function HealthCheckModal({ children, defaultServiceId }: { children: Rea
         }}>
             <DialogTrigger asChild>{children}</DialogTrigger>
             <DialogContent className="glass-morphic w-[95vw] max-w-lg rounded-lg md:w-full max-h-[90vh] flex flex-col" onInteractOutside={handleClose}>
-                <DialogHeader className="flex-shrink-0">
+                <DialogHeader className="flex-shrink-0 px-6 pt-6">
                     <DialogTitle className="text-2xl text-primary text-glow">{title}</DialogTitle>
                     <DialogDescription>{description}</DialogDescription>
                 </DialogHeader>
-                <ScrollArea className="flex-grow pr-6 -mr-6">
-                   <div className="h-full">
+                <ScrollArea className="flex-grow px-6">
+                   <div className="pb-6">
                        {renderContent()}
                    </div>
                 </ScrollArea>
