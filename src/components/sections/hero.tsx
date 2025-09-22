@@ -83,7 +83,7 @@ export default function HeroSection() {
         <div className="absolute inset-0 bg-[url('/particles.png')] bg-repeat opacity-10 animate-[pan_20s_linear_infinite]" />
 
         <div className="container px-4 md:px-6 relative z-20">
-            <div className="relative h-48 md:h-64">
+            <div className="relative flex flex-col items-center justify-center min-h-[12rem] md:min-h-[16rem]">
                  {slides.map((slide, index) => (
                     <div
                         key={slide.id}
