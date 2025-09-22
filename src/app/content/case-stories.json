@@ -73,6 +73,21 @@
           "metric": "-90%"
         }
       }
+    },
+    {
+      "slug": "ecommerce-analytics",
+      "title": "E-commerce Analytics",
+      "description": "Boosted online sales by 25% with a custom sales and marketing dashboard.",
+      "content": "An e-commerce startup was struggling to understand customer behavior and marketing ROI. We built a custom analytics dashboard that integrated data from Shopify, Google Analytics, and their social media campaigns. The dashboard provided a clear view of the customer journey, top-performing products, and marketing channel effectiveness. With these insights, they were able to optimize their ad spend and personalize promotions, leading to a 25% increase in sales within the first quarter.",
+      "image": "https://picsum.photos/seed/case4/1200/600",
+      "visual": {
+        "type": "graph",
+        "icon": "TrendingUp",
+        "data": {
+          "title": "Sales Increase",
+          "metric": "+25%"
+        }
+      }
     }
   ],
   "roiSection": {
