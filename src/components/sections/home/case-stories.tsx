@@ -28,7 +28,7 @@ export default function CaseStories() {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {stories.map((story) => (
             <Link key={story.slug} href={`/case-studies/${story.slug}`} passHref>
               <Card className="glass-morphic card-glow border-primary/20 flex flex-col h-full cursor-pointer group">
