@@ -46,7 +46,7 @@ export default function Footer() {
   };
 
   return (
-    <footer className="relative bg-background/50 pt-20 pb-8 mt-20 overflow-hidden">
+    <footer className="relative bg-background/50 pt-20 pb-8 mt-20 overflow-hidden sm:pb-20">
         <div className="absolute inset-0 z-0 opacity-30">
             <div className="absolute h-full w-full bg-gradient-to-t from-black via-primary/10 to-background"></div>
             <div className="absolute inset-0 bg-[url('/grid.svg')] bg-repeat opacity-20"/>
