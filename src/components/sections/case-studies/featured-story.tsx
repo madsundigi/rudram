@@ -88,14 +88,6 @@ export default function FeaturedStory() {
             </Card>
           </div>
         </div>
-
-        <div className="mt-16 text-center">
-            <HealthCheckModal defaultServiceId="health-check">
-                <Button size="lg" className="btn-glow px-8 py-6 text-lg">
-                    {featuredStory.cta.text}
-                </Button>
-            </HealthCheckModal>
-        </div>
       </div>
     </section>
   );
