@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react';
 import content from "@/app/content/case-stories.json";
 
 function CountUp({ end, duration = 2 }: { end: number; duration?: number }) {
-  const [count, setCount] = useState(end);
+  const [count, setCount] = useState(0);
   const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
@@ -15,8 +15,6 @@ function CountUp({ end, duration = 2 }: { end: number; duration?: number }) {
   useEffect(() => {
     if (!isMounted) return;
     
-    setCount(0); // Start from 0 on client
-
     let startTime: number | null = null;
     let animationFrame: number;
     
@@ -35,11 +33,20 @@ function CountUp({ end, duration = 2 }: { end: number; duration?: number }) {
     return () => cancelAnimationFrame(animationFrame);
   }, [end, duration, isMounted]);
 
+  if (!isMounted) {
+    return <span>{end}</span>;
+  }
+
   return <span>{count}</span>;
 }
 
 export default function CaseStudiesHero() {
   const { pageTitle, pageDescription, stats } = content;
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
 
   return (
     <section className="relative w-full py-20 text-center overflow-hidden md:py-28 lg:py-32">
@@ -72,7 +79,7 @@ export default function CaseStudiesHero() {
               style={{ animationDelay: `${0.6 + index * 0.2}s`, animationFillMode: 'backwards' }}
             >
               <h3 className="text-4xl lg:text-5xl font-bold text-primary text-glow">
-                <CountUp end={stat.value} />{stat.unit}
+                {isMounted ? <CountUp end={stat.value} /> : stat.value}{stat.unit}
               </h3>
               <p className="text-muted-foreground mt-2 text-sm md:text-base">{stat.label}</p>
             </div>
