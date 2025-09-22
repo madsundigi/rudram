@@ -30,7 +30,7 @@ export default function ClarityPath() {
 
           <div className="grid md:grid-cols-3 gap-8 md:gap-16 relative">
             {clarityPath.steps.map((step) => (
-              <Card key={step.id} className="glass-morphic text-center p-6 card-glow border-primary/20">
+              <Card key={step.id} className="glass-morphic text-center p-6 card-glow border-primary/20 flex flex-col">
                 <CardHeader className="items-center">
                   <div className="w-20 h-20 rounded-full glass-morphic flex items-center justify-center mb-4 border-2 border-primary/30 animate-pulse-glow">
                     {icons[step.icon]}
@@ -39,7 +39,7 @@ export default function ClarityPath() {
                     {step.title}
                   </CardTitle>
                 </CardHeader>
-                <CardContent>
+                <CardContent className="flex-grow flex flex-col justify-center">
                   <p className="text-muted-foreground">{step.description}</p>
                 </CardContent>
               </Card>
