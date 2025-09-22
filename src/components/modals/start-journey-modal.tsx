@@ -38,38 +38,40 @@ export function StartJourneyModal({ children }: { children: React.ReactNode }) {
     return (
         <Dialog open={open} onOpenChange={setOpen}>
             <DialogTrigger asChild>{children}</DialogTrigger>
-            <DialogContent className="sm:max-w-[425px] md:sm:max-w-lg glass-morphic" onInteractOutside={handleClose}>
-                <DialogHeader>
+            <DialogContent className="glass-morphic w-[95vw] max-w-lg rounded-lg md:w-full max-h-[90vh] flex flex-col" onInteractOutside={handleClose}>
+                <DialogHeader className="flex-shrink-0">
                     <DialogTitle className="text-2xl text-primary text-glow">{title}</DialogTitle>
                     <DialogDescription>{description}</DialogDescription>
                 </DialogHeader>
                 
-                {step === 1 && (
-                    <StartJourneyForm
-                        onFormSubmit={handleFormSubmit}
-                        onCancel={handleClose}
-                    />
-                )}
+                <div className="flex-grow overflow-y-auto -mr-6 pr-6">
+                    {step === 1 && (
+                        <StartJourneyForm
+                            onFormSubmit={handleFormSubmit}
+                            onCancel={handleClose}
+                        />
+                    )}
 
-                {step === 2 && (
-                    <div className="space-y-6 text-center">
-                        <h3 className="text-xl font-semibold">Thank You!</h3>
-                        <p className="text-muted-foreground">
-                            We've received your request. We'll send your personalized roadmap preview within 48 hours.
-                        </p>
-                        <p className="text-muted-foreground">
-                            Want to pick a time to chat now?
-                        </p>
-                        <div className="flex justify-center gap-4 pt-4">
-                            <FreeIntroCallModal>
-                                <Button className="btn-glow">Book Quick Call</Button>
-                            </FreeIntroCallModal>
-                             <Button onClick={handleClose} variant="outline">
-                                Close
-                            </Button>
+                    {step === 2 && (
+                        <div className="space-y-6 text-center py-8">
+                            <h3 className="text-xl font-semibold">Thank You!</h3>
+                            <p className="text-muted-foreground">
+                                We've received your request. We'll send your personalized roadmap preview within 48 hours.
+                            </p>
+                            <p className="text-muted-foreground">
+                                Want to pick a time to chat now?
+                            </p>
+                            <div className="flex justify-center gap-4 pt-4">
+                                <FreeIntroCallModal>
+                                    <Button className="btn-glow">Book Quick Call</Button>
+                                </FreeIntroCallModal>
+                                 <Button onClick={handleClose} variant="outline">
+                                    Close
+                                </Button>
+                            </div>
                         </div>
-                    </div>
-                )}
+                    )}
+                </div>
             </DialogContent>
         </Dialog>
     );

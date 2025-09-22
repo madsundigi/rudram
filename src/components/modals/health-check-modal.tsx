@@ -139,12 +139,14 @@ export function HealthCheckModal({ children, defaultServiceId }: { children: Rea
             else setOpen(true);
         }}>
             <DialogTrigger asChild>{children}</DialogTrigger>
-            <DialogContent className="sm:max-w-[425px] md:sm:max-w-lg glass-morphic" onInteractOutside={handleClose}>
-                <DialogHeader>
+            <DialogContent className="glass-morphic w-[95vw] max-w-lg rounded-lg md:w-full max-h-[90vh] flex flex-col" onInteractOutside={handleClose}>
+                <DialogHeader className="flex-shrink-0">
                     <DialogTitle className="text-2xl text-primary text-glow">{title}</DialogTitle>
                     <DialogDescription>{description}</DialogDescription>
                 </DialogHeader>
-                {renderContent()}
+                <div className="flex-grow overflow-y-auto -mr-6 pr-6">
+                    {renderContent()}
+                </div>
             </DialogContent>
         </Dialog>
     );
