@@ -2,9 +2,10 @@
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import content from "@/app/content/partners.json";
+import Image from "next/image";
 
 const AwsLogo = () => (
-    <img src="/images/AWS.svg" alt="AWS Logo" className="h-12 w-auto" />
+    <Image src="/images/aws.jpg" alt="AWS Logo" width={80} height={48} className="h-12 w-auto" />
 );
 
 const MicrosoftLogo = () => (
@@ -17,9 +18,7 @@ const MicrosoftLogo = () => (
 );
 
 const XeroLogo = () => (
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="h-10 w-auto text-white">
-        <path d="M15.72 4.453c-1.52.016-2.693 1.258-2.73 2.793.016 1.55 1.223 2.809 2.762 2.824 1.539-.015 2.762-1.273 2.746-2.824-.016-1.535-1.238-2.777-2.774-2.793zm-9.457 0c-1.52.016-2.693 1.258-2.73 2.793.016 1.55 1.223 2.809 2.762 2.824 1.539-.015 2.762-1.273 2.746-2.824-.016-1.535-1.238-2.777-2.774-2.793zm5.006 14.545c-2.707 0-4.998-2.292-5-5.02h2.95c.015 1.156.96 2.074 2.125 2.062 1.164.012 2.11-.906 2.125-2.062 0-1.156-.96-2.074-2.125-2.062H4.998V8.98h6.121c2.707 0 4.998 2.291 5 5.019a5.01 5.01 0 0 1-5.006 5.02z" />
-    </svg>
+    <Image src="/images/xero.png" alt="Xero Logo" width={80} height={40} className="h-10 w-auto" />
 );
 
 
