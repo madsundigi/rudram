@@ -20,7 +20,7 @@ import { StartJourneyModal } from "@/components/modals/start-journey-modal";
 
 export default function TestimonialCarousel() {
     const { testimonials, cta } = content;
-    const plugin = useRef(Autoplay({ delay: 5000, stopOnInteraction: true }));
+    const plugin = useRef(Autoplay({ delay: 3000, stopOnInteraction: true }));
 
   return (
     <section id="testimonials" className="w-full py-20 lg:py-32">

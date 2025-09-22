@@ -119,28 +119,144 @@
   },
   "testimonials": [
     {
-      "quote": "With Rudram, reporting time dropped from 12 hours to 2 — we now focus on decisions, not spreadsheets.",
+      "quote": "Reporting time was cut to just 3 hours, and decisions are now made the same day. A huge leap forward for us.",
       "name": "Sarah Mitchell",
       "role": "CFO",
-      "company": "Sydney Retailer",
-      "photo": "https://picsum.photos/seed/sarah/100/100",
-      "logo": "https://picsum.photos/seed/retail/100/40"
+      "company": "Sydney Retailer (FMCG)",
+      "photo": "https://picsum.photos/seed/sarah/100/100"
     },
     {
-      "quote": "The Data Health Check was an eye-opener. We found savings we never knew existed.",
+      "quote": "The 2-week Data Health Check uncovered $120K in annual cost savings. It paid for itself immediately.",
       "name": "Mark Johnson",
-      "role": "Head of Operations",
-      "company": "Melbourne Manufacturer",
-      "photo": "https://picsum.photos/seed/mark/100/100",
-      "logo": "https://picsum.photos/seed/mfg/100/40"
+      "role": "Ops Head",
+      "company": "Melbourne Manufacturing SME",
+      "photo": "https://picsum.photos/seed/mark/100/100"
     },
     {
-        "quote": "Our CRM is finally a tool for growth, not a source of frustration. The automation is seamless.",
-        "name": "Emily Roberts",
-        "role": "Director",
-        "company": "Brisbane Tech Startup",
-        "photo": "https://picsum.photos/seed/emily/100/100",
-        "logo": "https://picsum.photos/seed/re/100/40"
+      "quote": "We replaced 20+ outdated spreadsheets with one live dashboard. Our teams now act in minutes, not days.",
+      "name": "Emily Roberts",
+      "role": "Director",
+      "company": "Brisbane Tech Startup",
+      "photo": "https://picsum.photos/seed/emily/100/100"
+    },
+    {
+      "quote": "Forecast accuracy improved by 35%. As a finance firm, that level of clarity is everything.",
+      "name": "David Chen",
+      "role": "CFO",
+      "company": "Perth Financial Services",
+      "photo": "https://picsum.photos/seed/davidc/100/100"
+    },
+    {
+      "quote": "Integrating 6 different systems into one dashboard saved our staff 25 hours per week on manual data entry.",
+      "name": "Jessica Lee",
+      "role": "Clinical Manager",
+      "company": "Adelaide Healthcare Provider",
+      "photo": "https://picsum.photos/seed/jessical/100/100"
+    },
+    {
+      "quote": "Cleaning our CRM of 50k+ contacts enabled automated campaigns that increased qualified leads by 40%.",
+      "name": "Ben Carter",
+      "role": "Principal",
+      "company": "Sydney Real Estate Agency",
+      "photo": "https://picsum.photos/seed/benc/100/100"
+    },
+    {
+      "quote": "The interactive logistics app reduced missed deliveries by 22% and significantly boosted customer satisfaction.",
+      "name": "Fiona Green",
+      "role": "Logistics Director",
+      "company": "Melbourne Logistics Firm",
+      "photo": "https://picsum.photos/seed/fionag/100/100"
+    },
+    {
+      "quote": "Faculty can now monitor student progress in real-time, which has reduced our admin work by 60%.",
+      "name": "Dr. Alan Grant",
+      "role": "Dean of Academics",
+      "company": "Brisbane Education Institution",
+      "photo": "https://picsum.photos/seed/alang/100/100"
+    },
+    {
+      "quote": "Integrating our POS and warehouse data in real-time reduced stockouts by 50% and increased sales by 18%.",
+      "name": "Chloe White",
+      "role": "Retail Operations Manager",
+      "company": "Perth Retail Chain",
+      "photo": "https://picsum.photos/seed/chloew/100/100"
+    },
+    {
+      "quote": "A unified marketing dashboard helped us cut $70K in wasted ad spend in just six months. The ROI was immediate.",
+      "name": "Michael Brown",
+      "role": "Marketing Head",
+      "company": "Sydney SaaS Startup",
+      "photo": "https://picsum.photos/seed/michaelb/100/100"
+    },
+    {
+      "quote": "The financial control app detected project overruns early, saving us an average of 12% in project costs.",
+      "name": "Peter Jones",
+      "role": "Project Manager",
+      "company": "Melbourne Construction",
+      "photo": "https://picsum.photos/seed/peterj/100/100"
+    },
+    {
+      "quote": "Our monthly reports are now delivered in 2 hours instead of 10 days, freeing up the entire finance team.",
+      "name": "Anna Williams",
+      "role": "Finance Director",
+      "company": "Brisbane Food Distributor",
+      "photo": "https://picsum.photos/seed/annaw/100/100"
+    },
+    {
+      "quote": "Integrating our field sensor and ERP data reduced critical asset downtime by 15% and improved safety.",
+      "name": "Tom Harris",
+      "role": "Operations Chief",
+      "company": "Perth Mining Services",
+      "photo": "https://picsum.photos/seed/tomh/100/100"
+    },
+    {
+      "quote": "With our new energy monitoring dashboard, we identified efficiency gaps that are saving us $85K annually.",
+      "name": "Laura Davis",
+      "role": "Plant Manager",
+      "company": "Adelaide Manufacturing Plant",
+      "photo": "https://picsum.photos/seed/laurad/100/100"
+    },
+    {
+      "quote": "Automating our matter-level reporting improved data accuracy by 90% and freed our lawyers from tedious admin work.",
+      "name": "Steven Miller",
+      "role": "Managing Partner",
+      "company": "Sydney Legal Firm",
+      "photo": "https://picsum.photos/seed/stevenm/100/100"
+    },
+    {
+      "quote": "The live guest experience dashboard reduced our response time to 24 hours and raised satisfaction scores by 20%.",
+      "name": "Olivia Wilson",
+      "role": "General Manager",
+      "company": "Melbourne Hospitality Group",
+      "photo": "https://picsum.photos/seed/oliviaw/100/100"
+    },
+    {
+      "quote": "By creating a unified passenger and operations dashboard, we increased our ridership efficiency by 15%.",
+      "name": "Daniel Taylor",
+      "role": "Transport Planner",
+      "company": "Brisbane Transport Operator",
+      "photo": "https://picsum.photos/seed/danielt/100/100"
+    },
+    {
+      "quote": "Integrating satellite and farm data improved our crop yield prediction accuracy by an incredible 28%.",
+      "name": "Grace Moore",
+      "role": "Head Agronomist",
+      "company": "Perth Agribusiness",
+      "photo": "https://picsum.photos/seed/gracem/100/100"
+    },
+    {
+      "quote": "The donor impact dashboard improved transparency and helped us boost new donations by 18% this year.",
+      "name": "James Anderson",
+      "role": "CEO",
+      "company": "Adelaide Non-Profit",
+      "photo": "https://picsum.photos/seed/jamesa/100/100"
+    },
+    {
+      "quote": "Our portfolio founders cut their reporting time by 75%, allowing them to focus purely on scaling their businesses.",
+      "name": "Sophie Clark",
+      "role": "Program Director",
+      "company": "Sydney Startup Incubator",
+      "photo": "https://picsum.photos/seed/sophiec/100/100"
     }
   ],
   "cta": {
@@ -155,3 +271,5 @@
     }
   }
 }
+
+    
