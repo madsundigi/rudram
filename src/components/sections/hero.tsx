@@ -50,11 +50,11 @@ export default function HeroSection() {
 
 
   return (
-    <section className="relative w-full h-screen flex items-center justify-center text-center overflow-hidden">
+    <section className="relative w-full h-screen flex items-end justify-center text-center overflow-hidden pb-24 md:pb-32">
       <Carousel
         setApi={setApi}
         plugins={[plugin.current]}
-        className="w-full h-full"
+        className="w-full h-full absolute top-0 left-0"
         onMouseEnter={plugin.current.stop}
         onMouseLeave={plugin.current.reset}
         opts={{ loop: true }}
@@ -77,6 +77,7 @@ export default function HeroSection() {
                 ))}
             </CarouselContent>
         </div>
+      </Carousel>
 
         <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/60 z-10" />
 
@@ -123,7 +124,6 @@ export default function HeroSection() {
             </StartJourneyModal>
           </div>
         </div>
-      </Carousel>
     </section>
   );
 }
