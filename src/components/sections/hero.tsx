@@ -55,24 +55,22 @@ export default function HeroSection() {
         onMouseLeave={plugin.current.reset}
         opts={{ loop: true }}
       >
-        <div className="absolute inset-0 w-full h-full z-0">
-            <CarouselContent className="h-full" effect="fade">
-                {slides.map((slide, index) => (
-                <CarouselItem key={index} className="h-full">
-                    <div className="w-full h-full relative overflow-hidden">
-                    <Image
-                        src={slide.imageUrl}
-                        alt={slide.imageDescription}
-                        fill
-                        className="object-cover animate-zoom"
-                        data-ai-hint={slide.imageHint}
-                        priority={index === 0}
-                    />
-                    </div>
-                </CarouselItem>
-                ))}
-            </CarouselContent>
-        </div>
+        <CarouselContent className="h-full">
+            {slides.map((slide, index) => (
+            <CarouselItem key={index} className="h-full">
+                <div className="w-full h-full relative overflow-hidden">
+                <Image
+                    src={slide.imageUrl}
+                    alt={slide.imageDescription}
+                    fill
+                    className="object-cover animate-zoom"
+                    data-ai-hint={slide.imageHint}
+                    priority={index === 0}
+                />
+                </div>
+            </CarouselItem>
+            ))}
+        </CarouselContent>
       </Carousel>
 
         <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/60 z-10" />
