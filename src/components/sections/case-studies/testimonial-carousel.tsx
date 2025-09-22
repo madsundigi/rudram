@@ -37,15 +37,25 @@ export default function TestimonialCarousel() {
               <CarouselItem key={index}>
                 <div className="p-1">
                   <Card className="glass-morphic border-primary/20">
-                    <CardContent className="p-8 text-center space-y-6">
-                      <MessageSquare className="h-12 w-12 text-primary mx-auto text-glow"/>
-                      <p className="text-xl lg:text-2xl text-muted-foreground font-light leading-snug">
-                        &ldquo;{testimonial.quote}&rdquo;
-                      </p>
-                      <div className="flex items-center justify-center gap-4">
-                        <Image src={testimonial.logo} alt={`${testimonial.company} logo`} width={100} height={40} className="object-contain" />
-                        <span className="font-semibold text-foreground">{testimonial.company}</span>
-                      </div>
+                    <CardContent className="p-8 flex flex-col md:flex-row items-center gap-8">
+                       <div className="flex-shrink-0 text-center">
+                          <Image
+                            src={testimonial.photo}
+                            alt={testimonial.name}
+                            width={100}
+                            height={100}
+                            className="rounded-full mx-auto border-4 border-primary/50 shadow-lg"
+                          />
+                          <h4 className="mt-4 text-lg font-bold text-foreground">{testimonial.name}</h4>
+                          <p className="text-sm text-primary">{testimonial.role}</p>
+                          <p className="text-xs text-muted-foreground">{testimonial.company}</p>
+                       </div>
+                       <div className="relative text-center md:text-left">
+                          <MessageSquare className="absolute -top-4 -left-4 h-12 w-12 text-primary/10 -z-10"/>
+                          <p className="text-lg text-muted-foreground font-light leading-snug">
+                            &ldquo;{testimonial.quote}&rdquo;
+                          </p>
+                       </div>
                     </CardContent>
                   </Card>
                 </div>

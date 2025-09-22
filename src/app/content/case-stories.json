@@ -120,17 +120,26 @@
   "testimonials": [
     {
       "quote": "With Rudram, reporting time dropped from 12 hours to 2 — we now focus on decisions, not spreadsheets.",
-      "company": "Retail Client",
+      "name": "Sarah Mitchell",
+      "role": "CFO",
+      "company": "Sydney Retailer",
+      "photo": "https://picsum.photos/seed/sarah/100/100",
       "logo": "https://picsum.photos/seed/retail/100/40"
     },
     {
       "quote": "The Data Health Check was an eye-opener. We found savings we never knew existed.",
-      "company": "Manufacturing Client",
+      "name": "Mark Johnson",
+      "role": "Head of Operations",
+      "company": "Melbourne Manufacturer",
+      "photo": "https://picsum.photos/seed/mark/100/100",
       "logo": "https://picsum.photos/seed/mfg/100/40"
     },
     {
         "quote": "Our CRM is finally a tool for growth, not a source of frustration. The automation is seamless.",
-        "company": "Real Estate Client",
+        "name": "Emily Roberts",
+        "role": "Director",
+        "company": "Brisbane Tech Startup",
+        "photo": "https://picsum.photos/seed/emily/100/100",
         "logo": "https://picsum.photos/seed/re/100/40"
     }
   ],
