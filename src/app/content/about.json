@@ -10,8 +10,8 @@
       "founders": [
         {
           "name": "Shivam Maria",
-          "role": "CEO & Co-Founder",
-          "bio": "Expert in transforming complex data into actionable business strategy.",
+          "role": "Founder",
+          "bio": "“Enlightening your brain through knowledge and taking action not only helps in one’s daily growth but also takes you towards building a great character and wisdom.”",
           "image": {
             "src": "/images/shivam.jpg",
             "alt": "Portrait of Shivam Maria"
@@ -20,8 +20,8 @@
         },
         {
           "name": "Parav Pathak",
-          "role": "CTO & Co-Founder",
-          "bio": "Specializes in building robust, scalable data infrastructure from the ground up.",
+          "role": "Founder",
+          "bio": "“Continuous learning is not just a means of achieving success; it is the foundation of personal fulfillment and the gateway to living a life of purpose.”",
           "image": {
             "src": "/images/Parav.jpg",
             "alt": "Portrait of Parav Pathak"
