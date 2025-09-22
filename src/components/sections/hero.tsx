@@ -46,6 +46,8 @@ export default function HeroSection() {
   }, [api]);
 
   const slides = heroContent.slides;
+  const currentSlideContent = slides[current % slides.length];
+
 
   return (
     <section className="relative w-full h-screen flex items-center justify-center text-center overflow-hidden">
@@ -87,9 +89,9 @@ export default function HeroSection() {
                         key={slide.id}
                         className={cn(
                             "absolute inset-0 flex flex-col justify-center items-center space-y-6 transition-opacity duration-1000",
-                            current === index ? "opacity-100" : "opacity-0"
+                            current % slides.length === index ? "opacity-100" : "opacity-0"
                         )}
-                        aria-hidden={current !== index}
+                        aria-hidden={current % slides.length !== index}
                     >
                         <h1
                             className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tighter text-glow bg-clip-text text-transparent bg-gradient-to-b from-white to-neutral-300"
@@ -111,12 +113,12 @@ export default function HeroSection() {
           >
             <HealthCheckModal defaultServiceId="health-check">
               <Button size="lg" className="btn-glow text-lg px-8 py-6 bg-gradient-to-r from-teal-400 to-cyan-500 hover:from-teal-500 hover:to-cyan-600 border border-teal-300/50 text-white">
-                {slides[current]?.cta.primary.text || "Book a Data Health Check"}
+                {currentSlideContent?.cta.primary.text || "Book a Data Health Check"}
               </Button>
             </HealthCheckModal>
             <StartJourneyModal>
               <Button size="lg" variant="outline" className="text-lg px-8 py-6 glass-morphic border-white/50 hover:border-white text-white hover:bg-white/10">
-                {slides[current]?.cta.secondary.text || "See How It Works"}
+                {currentSlideContent?.cta.secondary.text || "See How It Works"}
               </Button>
             </StartJourneyModal>
           </div>
