@@ -55,7 +55,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8">
           {/* Left Column */}
           <div className="md:col-span-4 flex flex-col items-center md:items-start text-center md:text-left">
-            <Link href="/" className="flex items-center gap-2 mb-4" prefetch={false}>
+            <Link href="/" className="flex items-center mb-4" prefetch={false}>
               <img src="/images/logo.png" alt={`${settings.appName} logo`} width={52} height={52} className="animate-[pulse_5s_ease-in-out_infinite]" />
               <span className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-amber-200">udram</span>
             </Link>

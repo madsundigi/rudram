@@ -12,7 +12,7 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50 w-full glass-morphic">
       <div className="container mx-auto flex h-20 items-center justify-between px-4 md:px-6">
-        <Link href="/" className="flex items-center gap-2" prefetch={false}>
+        <Link href="/" className="flex items-center" prefetch={false}>
           <img src="/images/logo.png" alt={`${settings.appName} logo`} width={48} height={48} />
           <span className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-amber-200">udram</span>
         </Link>
@@ -48,7 +48,7 @@ export default function Header() {
               <nav className="grid gap-6 text-lg font-medium">
                 <Link
                   href="/"
-                  className="flex items-center gap-2 text-lg font-semibold"
+                  className="flex items-center text-lg font-semibold"
                   prefetch={false}
                 >
                   <img src="/images/logo.png" alt={`${settings.appName} logo`} width={48} height={48} />
