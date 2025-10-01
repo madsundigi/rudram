@@ -56,7 +56,7 @@ export default function Footer() {
           {/* Left Column */}
           <div className="md:col-span-4 flex flex-col items-center md:items-start text-center md:text-left">
             <Link href="/" className="flex items-center gap-3 mb-4" prefetch={false}>
-              <img src="/images/logo.png" alt={`${settings.appName} logo`} width={40} height={40} className="animate-[pulse_5s_ease-in-out_infinite]" />
+              <img src="/images/logo.png" alt={`${settings.appName} logo`} width={52} height={52} className="animate-[pulse_5s_ease-in-out_infinite]" />
               <span className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-amber-200">{settings.appName}</span>
             </Link>
             <p className="text-sm text-muted-foreground max-w-sm">

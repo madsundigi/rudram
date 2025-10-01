@@ -13,7 +13,7 @@ export default function Header() {
     <header className="sticky top-0 z-50 w-full glass-morphic">
       <div className="container mx-auto flex h-20 items-center justify-between px-4 md:px-6">
         <Link href="/" className="flex items-center gap-2" prefetch={false}>
-          <img src="/images/logo.png" alt={`${settings.appName} logo`} width={36} height={36} />
+          <img src="/images/logo.png" alt={`${settings.appName} logo`} width={48} height={48} />
           <span className="text-xl font-bold text-foreground">{settings.appName}</span>
         </Link>
         <nav className="hidden items-center gap-6 md:flex">
@@ -51,7 +51,7 @@ export default function Header() {
                   className="flex items-center gap-2 text-lg font-semibold"
                   prefetch={false}
                 >
-                  <img src="/images/logo.png" alt={`${settings.appName} logo`} width={36} height={36} />
+                  <img src="/images/logo.png" alt={`${settings.appName} logo`} width={48} height={48} />
                   <span className="sr-only">{settings.appName}</span>
                 </Link>
                 {navLinks.map((link) => (
