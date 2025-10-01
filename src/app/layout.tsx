@@ -1,3 +1,4 @@
+
 import type { Metadata } from 'next';
 import { Space_Grotesk } from 'next/font/google';
 import './globals.css';
@@ -12,7 +13,7 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
-  title: 'Rudram 3D DataView',
+  title: 'Rudram Data Solutions',
   description: 'From Data Chaos to Data Clarity',
 };
 
