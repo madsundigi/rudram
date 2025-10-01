@@ -46,7 +46,7 @@ export default function Footer() {
   };
 
   return (
-    <footer className="relative bg-background/50 pt-20 pb-8 mt-20 overflow-hidden sm:pb-20">
+    <footer className="relative bg-background/50 pt-20 pb-20 mt-20 overflow-hidden sm:pb-20">
         <div className="absolute inset-0 z-0 opacity-30">
             <div className="absolute h-full w-full bg-gradient-to-t from-black via-primary/10 to-background"></div>
             <div className="absolute inset-0 bg-[url('/grid.svg')] bg-repeat opacity-20"/>
@@ -56,7 +56,7 @@ export default function Footer() {
           {/* Left Column */}
           <div className="md:col-span-4 flex flex-col items-center md:items-start text-center md:text-left">
             <Link href="/" className="flex items-center gap-3 mb-4" prefetch={false}>
-              <img src="/images/Logo.png" alt={`${settings.appName} logo`} width={40} height={40} className="animate-[pulse_5s_ease-in-out_infinite]" />
+              <img src="/images/logo.png" alt={`${settings.appName} logo`} width={40} height={40} className="animate-[pulse_5s_ease-in-out_infinite]" />
               <span className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-amber-200">{settings.appName}</span>
             </Link>
             <p className="text-sm text-muted-foreground max-w-sm">
