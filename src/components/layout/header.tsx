@@ -1,4 +1,6 @@
 
+"use client";
+
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
@@ -6,9 +8,12 @@ import { Menu } from "lucide-react";
 import settings from "@/app/content/settings.json";
 import navLinks from "@/app/content/nav-links.json";
 import { HealthCheckModal } from "@/components/modals/health-check-modal";
+import { useState } from "react";
 
 
 export default function Header() {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
   return (
     <header className="sticky top-0 z-50 w-full glass-morphic">
       <div className="container mx-auto flex h-20 items-center justify-between px-4 md:px-6">
@@ -37,7 +42,7 @@ export default function Header() {
               {settings.cta.primary.text}
             </Button>
           </HealthCheckModal>
-          <Sheet>
+          <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
             <SheetTrigger asChild>
               <Button variant="outline" size="icon" className="md:hidden">
                 <Menu className="h-6 w-6" />
@@ -50,6 +55,7 @@ export default function Header() {
                   href="/"
                   className="flex items-center gap-2 text-lg font-semibold"
                   prefetch={false}
+                   onClick={() => setMobileMenuOpen(false)}
                 >
                   <img src="/images/logo.png" alt={`${settings.appName} logo`} width={48} height={48} />
                   <span className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-amber-200">Rudram</span>
@@ -60,6 +66,7 @@ export default function Header() {
                     href={link.href}
                     className="text-muted-foreground hover:text-foreground"
                     prefetch={false}
+                    onClick={() => setMobileMenuOpen(false)}
                   >
                     {link.label}
                   </Link>
