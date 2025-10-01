@@ -14,7 +14,7 @@ export default function Header() {
       <div className="container mx-auto flex h-20 items-center justify-between px-4 md:px-6">
         <Link href="/" className="flex items-center" prefetch={false}>
           <img src="/images/logo.png" alt={`${settings.appName} logo`} width={48} height={48} />
-          <span className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-amber-200">udram</span>
+          <span className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-amber-200">Rudram</span>
         </Link>
         <nav className="hidden items-center gap-6 md:flex">
           {navLinks.map((link) => (
@@ -52,7 +52,7 @@ export default function Header() {
                   prefetch={false}
                 >
                   <img src="/images/logo.png" alt={`${settings.appName} logo`} width={48} height={48} />
-                  <span className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-amber-200">udram</span>
+                  <span className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-amber-200">Rudram</span>
                 </Link>
                 {navLinks.map((link) => (
                   <Link

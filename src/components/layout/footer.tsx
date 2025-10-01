@@ -57,7 +57,7 @@ export default function Footer() {
           <div className="md:col-span-4 flex flex-col items-center md:items-start text-center md:text-left">
             <Link href="/" className="flex items-center mb-4" prefetch={false}>
               <img src="/images/logo.png" alt={`${settings.appName} logo`} width={52} height={52} className="animate-[pulse_5s_ease-in-out_infinite]" />
-              <span className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-amber-200">udram</span>
+              <span className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-amber-200">Rudram</span>
             </Link>
             <p className="text-sm text-muted-foreground max-w-sm">
                 {settings.tagline}
